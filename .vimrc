@@ -1,12 +1,19 @@
 " Setup {{{ 
 set nocompatible
 set number relativenumber
+set ignorecase
 colorscheme hipster
 execute pathogen#infect()
 filetype plugin indent on
 syntax enable
 set path+=**
 set wildmenu
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
 " }}}
 " Options {{{
 set omnifunc=syntaxcomplete#Complete
