@@ -1,7 +1,6 @@
-alias stl="ssh matus@139.59.146.104"
 alias yv="youtube-dl -f best"
 alias ya="youtube-dl --extract-audio -f best --audio-format m4a"
-alias hg="ssh unhills@162.144.3.114 -p 2222"
+alias ar="sudo service apache2 restart"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -92,4 +91,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
