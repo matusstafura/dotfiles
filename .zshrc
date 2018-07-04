@@ -1,6 +1,8 @@
 alias yv="youtube-dl -f best"
 alias ya="youtube-dl --extract-audio -f best --audio-format m4a"
 alias ar="sudo service apache2 restart"
+alias seo="ssh anticipe@s88.lokoz.com -p 22000"
+alias med="ssh matus@165.227.140.254 -p 2662"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -93,3 +95,5 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

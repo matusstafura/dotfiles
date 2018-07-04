@@ -1,13 +1,21 @@
+" PluginInstallers {{{ 
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'itchyny/lightline.vim'
+call plug#end()
+execute pathogen#infect()
+" }}}
 " Setup {{{ 
 set nocompatible
 set number relativenumber
+set laststatus=2
 set ignorecase
 colorscheme hipster
-execute pathogen#infect()
 filetype plugin indent on
 syntax enable
 set path+=**
 set wildmenu
+set modifiable
 set mouse=a
 if has("mouse_sgr")
   set ttymouse=sgr
@@ -37,7 +45,7 @@ nnoremap <leader>a gg"*yG<cr>
 " Keys:Plugin {{{
 nnoremap <leader>t :TableModeToggle<cr>
 nnoremap <leader>n :NERDTree<cr>
-nnoremap <leader>f :Ngrep 
+nnoremap ; :FZF!<cr>
 nnoremap [[ :cprev<cr>
 nnoremap ]] :cnext<cr>
 " }}}
