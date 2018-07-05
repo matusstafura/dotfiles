@@ -22,6 +22,7 @@ if has("mouse_sgr")
 else
   set ttymouse=xterm2
 end
+let NERDTreeShowHidden=1
 " }}}
 " Options {{{
 set omnifunc=syntaxcomplete#Complete

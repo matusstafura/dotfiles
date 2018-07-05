@@ -1,0 +1,4 @@
+# safe only
+alias yv="youtube-dl -f best"
+alias ya="youtube-dl --extract-audio -f best --audio-format m4a"
+alias ar="sudo service apache2 restart"
