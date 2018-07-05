@@ -26,7 +26,7 @@ let NERDTreeShowHidden=1
 " }}}
 " Options {{{
 set omnifunc=syntaxcomplete#Complete
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ranger_map_keys = 0
 set foldmethod=marker
 set number
 set listchars=tab:▸\ ,eol:¬
@@ -44,7 +44,8 @@ nnoremap <leader>s :w!<cr>
 nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
-nnoremap <leader>t :TableModeToggle<cr>
+map <leader>f :Ranger<cr>
+nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap ; :FZF!<cr>
 nnoremap [[ :cprev<cr>
