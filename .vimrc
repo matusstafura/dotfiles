@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 execute pathogen#infect()
