@@ -47,11 +47,14 @@ nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
 map <leader>f :Ranger<cr>
+nnoremap <leader>mgs 0f,f,lCtheme,frontend/Mgs/claue<esc>0f,lcw
 nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap ; :FZF!<cr>
 nnoremap [[ :cprev<cr>
 nnoremap ]] :cnext<cr>
+nnoremap <leader>rd :sort u<cr>
+nnoremap <leader>el :g/^$/d<cr>
 " }}}
 " Locales {{{
 " Svenska {{{
