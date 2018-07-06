@@ -46,8 +46,8 @@ nnoremap <leader>s :w!<cr>
 nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
-map <leader>f :Ranger<cr>
-nnoremap <leader>mgs 0f,f,lCtheme,frontend/Mgs/claue<esc>0f,lcw
+imap jj <Esc>
+nnoremap <leader>mgs 0f,f,lCtheme,frontend/Mgs/claue<esc>0f,lct,
 nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap ; :FZF!<cr>
