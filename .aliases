@@ -3,4 +3,9 @@ alias yv="youtube-dl -f best"
 alias ya="youtube-dl --extract-audio -f best --audio-format m4a"
 alias ar="sudo service apache2 restart"
 
-alias gf="git init && git add . && git commit -m 'first init'"
+alias gfr="git init && git add . && git commit -m 'first init'"
+
+bak() {
+	cp "$1" "$1.bak"
+	la "$1" "$1.bak"
+}
