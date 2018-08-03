@@ -47,7 +47,7 @@ nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
-nnoremap <leader>mgs 0f,f,lCtheme,frontend/Mgs/claue<esc>0f,lct,
+nnoremap <leader>mgs 0f,f,lCtheme,frontend/Infortis/blank<esc>0f,lct,
 nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap ; :FZF!<cr>
