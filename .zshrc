@@ -3,7 +3,8 @@ source ~/.dotfiles/.mycnf
 
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="honukai"
+#ZSH_THEME="honukai"
+ZSH_THEME="cobalt2"
 
 plugins=(git)
 
