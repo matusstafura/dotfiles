@@ -33,7 +33,6 @@ set omnifunc=syntaxcomplete#Complete
 let g:ranger_map_keys = 0
 set foldmethod=marker
 set number
-set listchars=tab:▸\ ,eol:¬
 set tabstop=2
 set timeoutlen=600
 " }}}
