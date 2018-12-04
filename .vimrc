@@ -33,6 +33,8 @@ set foldmethod=marker
 set number
 set tabstop=2
 set timeoutlen=600
+set encoding=utf-8
+set fileencoding=utf-8
 " }}}
 " Keys {{{
 " File manipulation {{{
