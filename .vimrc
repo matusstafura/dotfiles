@@ -54,7 +54,7 @@ nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap [[ :cprev<cr>
 nnoremap ]] :cnext<cr>
-nnoremap <leader>rd :sort u<cr>
+nnoremap <leader>rd :sort u<cr><esc>
 nnoremap <leader>el :g/^$/d<cr>
 " }}}
 " Locales {{{
