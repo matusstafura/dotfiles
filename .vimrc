@@ -10,8 +10,6 @@ execute pathogen#infect()
 " Setup {{{ 
 set nocompatible
 set number relativenumber
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_show_hidden = 1	
 set laststatus=2
 set ignorecase
 colorscheme hipster
@@ -35,6 +33,8 @@ set foldmethod=marker
 set number
 set tabstop=2
 set timeoutlen=600
+set encoding=utf-8
+set fileencoding=utf-8
 " }}}
 " Keys {{{
 " File manipulation {{{
@@ -48,10 +48,10 @@ nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
-vnoremap <C-c> "+y
-nnoremap <leader>mgs 0f,f,lCtheme,frontend/Mgs/claue<esc>0f,lct,
+nnoremap <leader>mgs 0f,f,lCtheme,frontend/Infortis/blank<esc>0f,lct,
 nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
+nnoremap ; :FZF!<cr>
 nnoremap [[ :cprev<cr>
 nnoremap ]] :cnext<cr>
 nnoremap <leader>rd :sort u<cr><esc>
