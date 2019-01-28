@@ -48,14 +48,17 @@ nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
-nnoremap <leader>mgs 0f,f,lCtheme,frontend/Infortis/blank<esc>0f,lct,
 nnoremap <C-t> :FZF<cr>
 nnoremap <leader>n :NERDTree<cr>
 nnoremap ; :FZF!<cr>
-nnoremap [[ :cprev<cr>
-nnoremap ]] :cnext<cr>
 nnoremap <leader>rd :sort u<cr><esc>
 nnoremap <leader>el :g/^$/d<cr>
+nmap tv :vsplit<cr>
+nmap th :split<cr>
+nmap tt <C-w><C-w>
+nmap tc <C-w><C-q>
+xnoremap <C-k> :m-2<cr>gv=gv
+xnoremap <C-j> :m'>+<cr>gv=gv
 " }}}
 " Locales {{{
 " Svenska {{{
