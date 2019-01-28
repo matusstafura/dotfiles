@@ -4,10 +4,9 @@ source ~/.dotfiles/.syndicate
 
 export ZSH=~/.oh-my-zsh
 
-#ZSH_THEME="honukai"
-ZSH_THEME="cobalt2"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
-plugins=(git)
+#plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
