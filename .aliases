@@ -1,11 +1,14 @@
 # safe only
+alias r="ranger"
+alias v="vim"
 
 alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
-
-alias yv="youtube-dl -f best"
-alias ya="youtube-dl --extract-audio -f best --audio-format m4a"
 alias ar="sudo service apache2 restart"
+
+alias yvi="youtube-dl -f best"
+alias yau="youtube-dl --extract-audio -f best --audio-format m4a"
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 # git aliases
 alias gfr="git init && git add . && git commit -m 'first init'"
@@ -13,6 +16,8 @@ alias gps="git push origin master"
 alias gpl="git pull origin master"
 alias gst="git status"
 alias gcm="git commit -m"
+alias gcl="git clone"
+alias gch="git checkout"
 alias gaa="git add ."
 
 # functions
