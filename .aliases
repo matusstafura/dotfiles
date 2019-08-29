@@ -19,6 +19,7 @@ alias gcm="git commit -m"
 alias gcl="git clone"
 alias gch="git checkout"
 alias gaa="git add ."
+alias gdf="git diff"
 
 # functions
 bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
