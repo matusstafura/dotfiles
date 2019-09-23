@@ -20,8 +20,11 @@ alias gcl="git clone"
 alias gch="git checkout"
 alias gaa="git add ."
 alias gdf="git diff"
+<<<<<<< HEAD
 alias gsh="git show"
 alias glo="git log --oneline --graph"
+=======
+>>>>>>> edc1819068b0f18007ba95b38f0080cca1767e0f
 
 # functions
 bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
