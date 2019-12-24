@@ -4,11 +4,31 @@ alias v="vim"
 
 alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
-alias ar="sudo service apache2 restart"
+alias apr="sudo service apache2 restart"
 
-alias yvi="youtube-dl -f best"
-alias yau="youtube-dl --extract-audio -f best --audio-format m4a"
-alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+# Magento 
+
+alias bms="bin/magento module:status"
+alias bme="bin/magento module:enable"
+alias bmd="bin/magento module:disable"
+
+alias bcf="bin/magento cache:flush"
+alias bce="bin/magento cache:enable"
+alias bcd="bin/magento cache:disable"
+
+alias ixs="bin/magento indexer:reindex"
+
+alias dpl="bin/magento setup:static-content:deploy"
+alias upg="bin/magento setup:upgrade && fix"
+
+alias dev="bin/magento deploy:mode:set developer"
+alias prd="bin/magento deploy:mode:set production"
+
+alias css="vim app/design/frontend/Svart/Svan/web/css/theme.css"
+alias trs="bin/magento i18n:pack --mode=replace --allow-duplicates sk_SK.csv sk_SK && fls"
+alias trc="bin/magento i18n:pack --mode=replace --allow-duplicates cs_CZ.csv cs_CZ && fls"
+alias cho="chown -R matus:www-data ."
+alias chm="chmod -R 777 var generated pub"
 
 # git aliases
 alias gfr="git init && git add . && git commit -m 'first init'"

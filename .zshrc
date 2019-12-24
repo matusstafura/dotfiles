@@ -1,6 +1,5 @@
 source ~/.dotfiles/.aliases
 source ~/.dotfiles/.mycnf
-source ~/.dotfiles/.syndicate
 
 export ZSH=~/.oh-my-zsh
 
