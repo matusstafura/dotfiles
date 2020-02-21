@@ -1,6 +1,4 @@
 # safe only
-alias r="ranger"
-alias v="vim"
 
 alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
@@ -18,15 +16,16 @@ alias bcd="bin/magento cache:disable"
 
 alias ixs="bin/magento indexer:reindex"
 
+alias com="bin/magento setup:di:compile"
 alias dpl="bin/magento setup:static-content:deploy"
-alias upg="bin/magento setup:upgrade && fix"
+alias upg="bin/magento setup:upgrade"
 
-alias dev="bin/magento deploy:mode:set developer"
-alias prd="bin/magento deploy:mode:set production"
+alias bdd="bin/magento deploy:mode:set developer"
+alias bdp="bin/magento deploy:mode:set production"
 
 alias css="vim app/design/frontend/Svart/Svan/web/css/theme.css"
-alias trs="bin/magento i18n:pack --mode=replace --allow-duplicates sk_SK.csv sk_SK && fls"
-alias trc="bin/magento i18n:pack --mode=replace --allow-duplicates cs_CZ.csv cs_CZ && fls"
+alias trs="bin/magento i18n:pack --mode=replace --allow-duplicates sk_SK.csv sk_SK && bcf"
+alias trc="bin/magento i18n:pack --mode=replace --allow-duplicates cs_CZ.csv cs_CZ && bcf"
 alias cho="chown -R matus:www-data ."
 alias chm="chmod -R 777 var generated pub"
 
