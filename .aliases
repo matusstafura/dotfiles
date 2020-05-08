@@ -4,8 +4,13 @@ alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
 alias apr="sudo service apache2 restart"
 
-# Magento 
+# Docker
 
+alias dil="docker image ls"
+alias did="docker image rm"
+alias dcu="docker-composer up"
+
+# Magento
 alias bms="bin/magento module:status"
 alias bme="bin/magento module:enable"
 alias bmd="bin/magento module:disable"
