@@ -3,6 +3,15 @@
 alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
 alias apr="sudo service apache2 restart"
+alias htt="httrack"
+
+# Laravel
+
+alias tin="php artisan tinker"
+alias mco="php artisan make:controller"
+alias mmo="php artisan make:model"
+
+alias pp="phpunit"
 
 # Docker
 
