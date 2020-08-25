@@ -1,3 +1,8 @@
 # my conf
 .mycnf
 .oh-my-zsh/cache/*
+*.swp
+*.swo
+.vim/
+.oh-my-zsh/
+.dotfiles/.vim/

@@ -1,18 +1,23 @@
 " PluginInstallers {{{ 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 execute pathogen#infect()
 " }}}
-" Setup {{{ 
+" Setup {{{ :PluginInstall
 set nocompatible
 set number relativenumber
 set laststatus=2
 set ignorecase
-colorscheme hipster
+colorscheme gruvbox
+set background=dark
 filetype plugin indent on
 syntax enable
 set path+=**
@@ -25,6 +30,7 @@ else
   set ttymouse=xterm2
 end
 let NERDTreeShowHidden=1
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 " }}}
 " Options {{{
 set omnifunc=syntaxcomplete#Complete
@@ -32,31 +38,30 @@ let g:ranger_map_keys = 0
 set foldmethod=marker
 set number
 set tabstop=2
-set timeoutlen=600
+set timeoutlen=600 ttimeoutlen=0
 set encoding=utf-8
 set fileencoding=utf-8
+set rtp+=~/.fzf
 " }}}
 " Keys {{{
-" File manipulation {{{
+" File  manipulation {{{
 inoremap <leader>q <esc>:q!<cr>
 inoremap <leader>z <esc>:wq<cr>
 inoremap <leader>s <esc>:w!<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>z :wq<cr>
 nnoremap <leader>s :w!<cr>
-nnoremap <leader>a gg"*yG<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
-nnoremap <C-t> :FZF<cr>
-nnoremap <leader>n :NERDTree<cr>
-nnoremap ; :FZF!<cr>
+nmap <leader>vl 'a<C-v>'b$S<li>'aO<ul><Esc>'bo</ul><Esc>'akO<h3>Vlastnosti:</h3><Esc>
+nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>rd :sort u<cr><esc>
 nnoremap <leader>el :g/^$/d<cr>
-nmap tv :vsplit<cr>
-nmap th :split<cr>
-nmap tt <C-w><C-w>
-nmap tc <C-w><C-q>
+nmap <leader>tv :vsplit<cr>
+nmap <leader>th :split<cr>
+nmap <leader>tt <C-w><C-w>
+nmap <leader>tc <C-w><C-q>
 xnoremap <C-k> :m-2<cr>gv=gv
 xnoremap <C-j> :m'>+<cr>gv=gv
 " }}}
@@ -82,7 +87,5 @@ inoremap <C-v>;; <C-k>o>
 " }}}
 " }}}
 " Autocommands {{{
-autocmd BufNewFile,BufRead,BufWrite *.md,*.txt, set filetype=markdown ts=3 sw=3
-autocmd BufNewFile,BufRead,BufWrite *.rb, set ts=3 sw=3
 command! -nargs=1 Ngrep vimgrep "<args>" **
 " }}}
