@@ -38,6 +38,7 @@ let g:ranger_map_keys = 0
 set foldmethod=marker
 set number
 set tabstop=2
+let g:surround_indent = 0
 set timeoutlen=600 ttimeoutlen=0
 set encoding=utf-8
 set fileencoding=utf-8
@@ -54,6 +55,9 @@ nnoremap <leader>s :w!<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
+vmap <leader>cc "*y
+nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
+nmap <leader>cl ggVGc<Esc>
 nmap <leader>vl 'a<C-v>'b$S<li>'aO<ul><Esc>'bo</ul><Esc>'akO<h3>Vlastnosti:</h3><Esc>
 nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>rd :sort u<cr><esc>
