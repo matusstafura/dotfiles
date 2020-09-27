@@ -4,6 +4,7 @@ alias rzs="source ~/.zshrc"
 alias rvi="source ~/.vimrc"
 alias apr="sudo service apache2 restart"
 alias htt="httrack"
+alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
 
 # Laravel
 
@@ -12,12 +13,8 @@ alias mco="php artisan make:controller"
 alias mmo="php artisan make:model"
 
 alias pp="phpunit"
-
-# Docker
-
-alias dil="docker image ls"
-alias did="docker image rm"
-alias dcu="docker-composer up"
+alias ppf="phpunit --filter"
+alias ppd="phpunit --testdox"
 
 # Magento
 alias bms="bin/magento module:status"
@@ -45,12 +42,20 @@ alias chm="chmod -R 777 var generated pub"
 
 # git aliases
 alias gfr="git init && git add . && git commit -m 'first init'"
-alias gps="git push origin master"
-alias gpl="git pull origin master"
+alias nah="git reset --hard && git clean -df"
+alias ame="git commit --amend --no-edit"
+alias gmrd="git merge dev"
+alias gpsm="git push origin master"
+alias gplm="git pull origin master"
+alias gpsd="git push origin dev"
+alias gpld="git pull origin dev"
 alias gst="git status"
 alias gcm="git commit -m"
 alias gcl="git clone"
 alias gch="git checkout"
+alias gmm="git checkout master"
+alias gdd="git checkout dev"
+alias gad="git add"
 alias gaa="git add ."
 alias gdf="git diff"
 alias gsh="git show"
@@ -61,3 +66,4 @@ bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
 dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
 grp() { grep -R "$1" "$2"; }
 mkc() { mkdir "$1"; cd "$1"; }
+

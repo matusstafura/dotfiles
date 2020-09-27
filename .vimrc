@@ -24,12 +24,12 @@ set path+=**
 set wildmenu
 set modifiable
 set mouse=a
+set foldmethod=indent
 if has("mouse_sgr")
   set ttymouse=sgr
 else
   set ttymouse=xterm2
 end
-let NERDTreeShowHidden=1
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 " }}}
 " Options {{{
@@ -55,10 +55,14 @@ nnoremap <leader>s :w!<cr>
 " }}}
 " Keys:Plugin {{{
 imap jj <Esc>
+imap kk <Esc>la
+nmap aa ggVG"*y
 vmap <leader>cc "*y
 nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
 nmap <leader>cl ggVGc<Esc>
 nmap <leader>vl 'a<C-v>'b$S<li>'aO<ul><Esc>'bo</ul><Esc>'akO<h3>Vlastnosti:</h3><Esc>
+nmap <leader>ul gg<C-v>G$S<li>ggO<ul>jjGo</ul><Esc>ggVG"*y
+nmap <leader>pp ggxG$xgg<C-v>G$A.<Esc>gg<C-v>G$S<p>vipJV"*y
 nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>rd :sort u<cr><esc>
 nnoremap <leader>el :g/^$/d<cr>
