@@ -14,7 +14,7 @@ alias mmo="php artisan make:model"
 
 alias pp="phpunit"
 alias ppf="phpunit --filter"
-alias ppd="phpunit --testdox"
+alias ppd="./vendor/bin/phpunit --testdox"
 
 # Magento
 alias bms="bin/magento module:status"
@@ -49,6 +49,7 @@ alias gpsm="git push origin master"
 alias gplm="git pull origin master"
 alias gpsd="git push origin dev"
 alias gpld="git pull origin dev"
+alias ggg="gmm && gmrd && gpsm && gdd"
 alias gst="git status"
 alias gcm="git commit -m"
 alias gcl="git clone"

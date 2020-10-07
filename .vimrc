@@ -56,6 +56,7 @@ nnoremap <leader>s :w!<cr>
 " Keys:Plugin {{{
 imap jj <Esc>
 imap kk <Esc>la
+imap lll <Esc>A => ''<Esc>i
 nmap aa ggVG"*y
 vmap <leader>cc "*y
 nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
