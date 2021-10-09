@@ -9,7 +9,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 call plug#end()
-execute pathogen#infect()
 " }}}
 " Setup {{{ :PluginInstall
 set nocompatible
