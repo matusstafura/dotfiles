@@ -6,8 +6,10 @@ GLOBIGNORE="*.sh":"*.md":"*.swp":"*.plist":".git"
 
 symAll() { # creates symlink for each dotfile
 for f in *; do
-	ln -s ~/$DOTFOLDER/$f ~/$f
+	ln -sf ~/$DOTFOLDER/$f ~/$f
 done
 }
+
+ln -sf ~/.dotfiles/.vimrc ~
 
 symAll
