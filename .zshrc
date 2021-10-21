@@ -20,10 +20,10 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/sbin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-# export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-export PATH="/usr/local/opt/php/bin:$PATH"
-export PATH="/usr/local/opt/php/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+# export PATH="/usr/local/opt/php/bin:$PATH"
+# export PATH="/usr/local/opt/php/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

@@ -8,6 +8,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'preservim/nerdtree'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " }}}
 " Setup {{{ :PluginInstall
@@ -36,7 +38,7 @@ set omnifunc=syntaxcomplete#Complete
 let g:ranger_map_keys = 0
 set foldmethod=marker
 set number
-set tabstop=2
+set tabstop=4
 let g:surround_indent = 0
 set timeoutlen=600 ttimeoutlen=0
 set encoding=utf-8
@@ -63,6 +65,7 @@ nmap <leader>cl ggVGc<Esc>
 nmap <leader>vl ggmaGmb'a<C-v>'b$S<li>'aO<ul><Esc>'bo</ul><Esc>'akO<h3>Vlastnosti:</h3><Esc>ggVG"*yggVGc<Esc>
 nmap <leader>ul gg<C-v>G$S<li>ggO<ul>jjGo</ul><Esc>ggVG"*y
 nmap <leader>pp ggxG$xgg<C-v>G$A.<Esc>gg<C-v>G$S<p>vipJV"*y
+nnoremap <leader>nn :NERDTree<cr>
 nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>rd :sort u<cr><esc>
 nnoremap <leader>el :g/^$/d<cr>
