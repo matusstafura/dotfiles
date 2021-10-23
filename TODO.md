@@ -1,0 +1,2 @@
+- [ ] ranger
+- [ ] test setup.sh

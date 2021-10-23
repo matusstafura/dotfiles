@@ -6,10 +6,10 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 call plug#end()
 " }}}
 " Setup {{{ :PluginInstall
@@ -17,7 +17,9 @@ set nocompatible
 set number relativenumber
 set laststatus=2
 set ignorecase
-colorscheme gruvbox
+colorscheme material
+let g:material_theme_style = 'ocean'
+let NERDTreeShowHidden=1
 set background=dark
 filetype plugin indent on
 syntax enable
@@ -26,6 +28,9 @@ set wildmenu
 set modifiable
 set mouse=a
 set foldmethod=indent
+if (has('termguicolors'))
+  set termguicolors
+endif
 if has("mouse_sgr")
   set ttymouse=sgr
 else
