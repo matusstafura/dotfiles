@@ -49,6 +49,11 @@ set timeoutlen=600 ttimeoutlen=0
 set encoding=utf-8
 set fileencoding=utf-8
 set rtp+=~/.fzf
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
 " }}}
 " Keys {{{
 " File  manipulation {{{
@@ -67,9 +72,6 @@ nmap <leader>ii ciw'<C-r>"'jj
 vmap <leader>cc "*y
 nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
 nmap <leader>cl ggVGc<Esc>
-nmap <leader>vl ggmaGmb'a<C-v>'b$S<li>'aO<ul><Esc>'bo</ul><Esc>'akO<h3>Vlastnosti:</h3><Esc>ggVG"*yggVGc<Esc>
-nmap <leader>ul gg<C-v>G$S<li>ggO<ul>jjGo</ul><Esc>ggVG"*y
-nmap <leader>pp ggxG$xgg<C-v>G$A.<Esc>gg<C-v>G$S<p>vipJV"*y
 nnoremap <leader>nn :NERDTree<cr>
 nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>rd :sort u<cr><esc>

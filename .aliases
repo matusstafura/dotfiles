@@ -6,6 +6,7 @@ alias apr="sudo service apache2 restart"
 alias htt="httrack"
 alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
 alias toh="find . -type f -exec mv {} {}.html \;"
+alias p="python3"
 
 
 # Laravel

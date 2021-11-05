@@ -9,10 +9,11 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: '"Meslo LG L DZ for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    // fontFamily: '"Meslo LG L DZ for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Fira Code","Meslo LG L DZ for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -21,7 +22,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1,
+    lineHeight: 1.1,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -43,13 +44,14 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#252B39',
+    // backgroundColor: '#252B39',
+    backgroundColor: '#444',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#111',
 
     // custom CSS to embed in the main window
     css: '',
@@ -113,7 +115,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: 'SOUND',
+    bell: 'false',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -130,6 +132,7 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
     
+
   },
 
   // a list of plugins to fetch and install from npm
@@ -139,11 +142,13 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyper-material-theme', 
-    'hyper-snazzy',
-    'hyper-transparent'
+    'hyperterm-material', 
+    'hyperterm-tabs',
+    // 'hyper-snazzy',
+    // 'hyperterm-gruvbox-dark'
+    // 'hyper-transparent'
   ],
-
+  
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

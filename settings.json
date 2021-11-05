@@ -1,0 +1,31 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.dotfiles/.vimrc",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 23,
+    "workbench.activityBar.visible": false,
+    "terminal.external.osxExec": "Hyper.js",
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1.1,
+    "editor.lineNumbers": "off",
+    "terminal.integrated.profiles.linux": {
+        "zsh (login)": {
+          "path": "zsh",
+          "args": ["-l"]
+        }
+      },
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.statusBar.visible": false,
+    "editor.renderWhitespace": "none",
+    "workbench.editor.showTabs": false,
+    "workbench.editor.enablePreview": false,
+    "gitHistory.showEditorTitleMenuBarIcons": false,
+    "workbench.startupEditor": "none",
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.sideBar.location": "right",
+}
