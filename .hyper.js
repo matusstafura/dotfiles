@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
 
     // font family with optional fallbacks
     // fontFamily: '"Meslo LG L DZ for Powerline", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -22,7 +22,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.1,
+    lineHeight: 1.2,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -123,33 +123,18 @@ module.exports = {
     // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
     defaultSSHApp: true,
 
-    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
-    // selection is present (`true` by default on Windows and disables the context menu feature)
-    // quickEdit: true,
-
-    // URL to custom bell
-    // bellSoundURL: 'http://example.com/bell.mp3',
-
-    // for advanced config flags please refer to https://hyper.is/#cfg
-    
+    // Plugins settings
+    opacity: 0.65
 
   },
-
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
+  
   plugins: [
-    'hyperterm-material', 
-    'hyperterm-tabs',
-    // 'hyper-snazzy',
-    // 'hyperterm-gruvbox-dark'
-    // 'hyper-transparent'
+    // 'hyperterm-material', 
+    // 'hyper-cobalt-next'
+    'hyper-ayu',
+    'hyper-opacity',
   ],
   
-
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed

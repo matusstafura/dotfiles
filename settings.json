@@ -28,4 +28,11 @@
     "workbench.startupEditor": "none",
     "emmet.triggerExpansionOnTab": true,
     "workbench.sideBar.location": "right",
+    "python.formatting.provider":	"autopep8",
+
+    "[javascript]": {
+      "javascript.format.enable": false,
+      "prettier.singleQuote": true,
+      "editor.formatOnSave": true,
+    }
 }

@@ -10,6 +10,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 " }}}
 " Setup {{{ :PluginInstall
@@ -31,11 +32,6 @@ set foldmethod=indent
 if (has('termguicolors'))
   set termguicolors
 endif
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
-end
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 " }}}
 " Options {{{

@@ -1,21 +1,35 @@
 # safe only
 
-alias rzs="source ~/.zshrc"
-alias rvi="source ~/.vimrc"
-alias apr="sudo service apache2 restart"
-alias htt="httrack"
+# "C" composer
+alias coi="composer install"
+alias cou="composer update"
+alias cor="composer require"
+
+# "D" dotfiles
+alias drz="source ~/.zshrc"
+alias drv="source ~/.vimrc"
+alias dvv="vim ~/.dotfiles/.vimrc"
+alias dvz="vim ~/.dotfiles/.zshrc"
+alias dva="vim ~/.dotfiles/.aliases"
+
+# apps and languages
+alias c="code ."
+alias p="python3"
+alias r="ranger"
+alias s="subl ."
+alias v="nvim"
+
+# utils
 alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
 alias toh="find . -type f -exec mv {} {}.html \;"
-alias p="python3"
-
+alias apr="sudo service apache2 restart"
+alias htt="httrack"
 
 # Laravel
-
 alias art="php artisan"
 alias tin="php artisan tinker"
 alias mco="php artisan make:controller"
 alias mmo="php artisan make:model"
-
 alias sail="./vendor/bin/sail"
 alias pp="./vendor/bin/phpunit"
 alias ps="./vendor/bin/pest"
@@ -23,28 +37,21 @@ alias ppc="./vendor/bin/phpunit --coverage-html coverage"
 alias ppd="./vendor/bin/phpunit --testdox"
 alias ppf="./vendor/bin/phpunit --filter"
 
-
 # Magento
 alias bms="bin/magento module:status"
 alias bme="bin/magento module:enable"
 alias bmd="bin/magento module:disable"
-
 alias bcf="bin/magento cache:flush"
 alias bce="bin/magento cache:enable"
 alias bcd="bin/magento cache:disable"
-
 alias ixs="bin/magento indexer:reindex"
-
 alias com="bin/magento setup:di:compile"
 alias dpl="bin/magento setup:static-content:deploy"
 alias upg="bin/magento setup:upgrade"
-
 alias bdd="bin/magento deploy:mode:set developer"
 alias bdp="bin/magento deploy:mode:set production"
 
-alias css="vim app/design/frontend/Svart/Svan/web/css/theme.css"
-
-# git aliases
+# "G" git aliases
 alias grs="git reset --soft HEAD~1"
 alias grh="git reset --hard HEAD~1"
 alias gfr="git init && git add . && git commit -m 'first init'"
