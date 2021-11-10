@@ -21,6 +21,7 @@
   set background=dark
   set number relativenumber
   set nocompatible
+  set nofoldenable
   set foldmethod=marker
   set timeoutlen=600 ttimeoutlen=0
   set encoding=utf-8
