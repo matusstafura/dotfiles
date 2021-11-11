@@ -78,6 +78,6 @@ alias glo="git log --oneline --graph"
 # functions
 bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
 dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
-grp() { grep -R "$1" "$2"; }
 mkc() { mkdir "$1"; cd "$1"; }
+ide() { tmux split-window -v -p 30; tmux split-window -h -p 50 }
 

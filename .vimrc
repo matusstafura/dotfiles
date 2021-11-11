@@ -63,6 +63,13 @@
 " Keybindings: Plugin 
   imap jj <Esc>
   imap kk <Esc>la
+" Keybindings: Split windows  
+  nmap sd :vsplit<cr>
+  nmap sx :split<cr>
+  nmap sh <C-w>h
+  nmap sj <C-w>j
+  nmap sk <C-w>k
+  nmap sl <C-w>l
   nmap <leader>aa ggVG"*y
   nmap <leader>ii ciw'<C-r>"'jj
   vmap <leader>cc "*y
@@ -73,8 +80,6 @@
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
   nmap <leader>r :RangerWorkingDirectory<cr>
-  nmap <leader>tv :vsplit<cr>
-  nmap <leader>th :split<cr>
   nmap <leader>tt <C-w><C-w>
   nmap <leader>tc <C-w><C-q>
   xnoremap <C-k> :m-2<cr>gv=gv
