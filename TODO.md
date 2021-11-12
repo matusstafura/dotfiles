@@ -1,2 +1,3 @@
-- [ ] ranger
+# TODO
+
 - [ ] test setup.sh
