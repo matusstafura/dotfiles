@@ -3,8 +3,6 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -32,5 +30,7 @@ export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

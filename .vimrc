@@ -5,7 +5,6 @@
   Plug 'stsewd/fzf-checkout.vim'
   Plug 'tpope/vim-surround'
   Plug 'itchyny/lightline.vim'
-  Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'preservim/nerdtree'
   Plug 'jiangmiao/auto-pairs'

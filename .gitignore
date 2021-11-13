@@ -4,6 +4,6 @@
 *.swp
 *.swo
 .vim/
-.vim/plugged
 .oh-my-zsh/
 .dotfiles/.vim/
+.vim/plugged
