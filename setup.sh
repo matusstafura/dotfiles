@@ -16,7 +16,7 @@ ln -sf ~/.dotfiles/.p10k.zsh ~
 ln -sf ~/.dotfiles/.tmux.conf ~
 ln -sf ~/.dotfiles/.vimrc ~
 ln -sf ~/.dotfiles/.zshrc ~
-mkdir -P ~/.config/nvim && ln -sf ~/.dotfiles/.init.vim ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim && ln -sf ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
 # reload config files
 source ~/.zshrc

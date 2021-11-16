@@ -7,11 +7,11 @@ alias cor="composer require"
 
 # "D" dotfiles
 alias drz="source ~/.zshrc"
-alias drv="source ~/.vimrc"
 alias dvv="vim ~/.dotfiles/.vimrc"
 alias dvz="vim ~/.dotfiles/.zshrc"
 alias dva="vim ~/.dotfiles/.aliases"
 alias dot="cd ~/.dotfiles"
+alias ddd="cd ~/.dotfiles && git pull && drz && cd -"
 
 # apps and languages
 alias c="code ."
