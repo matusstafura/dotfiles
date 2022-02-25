@@ -12,8 +12,7 @@
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
   if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'vim-scripts/indentpython.vim'
   endif
   call plug#end()
 " Plugins: Setup 
@@ -22,7 +21,7 @@
   set nocompatible
   set nofoldenable
   set foldmethod=marker
-  set timeoutlen=600 ttimeoutlen=0
+  set timeoutlen=400 ttimeoutlen=0
   set encoding=utf-8
   set number
   set tabstop=4
@@ -85,3 +84,9 @@
   xnoremap <C-j> :m'>+<cr>gv=gv
 " Autocommands 
   command! -nargs=1 Ngrep vimgrep "<args>" **
+  au BufNewFile, BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
+  au BufNewFile, BufRead *.js,*.html,*.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+  au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/

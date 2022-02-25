@@ -124,7 +124,7 @@ module.exports = {
     defaultSSHApp: true,
 
     // Plugins settings
-    opacity: 0.65
+    opacity: 1
 
   },
   

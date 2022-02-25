@@ -1,38 +1,42 @@
 {
-    "workbench.colorTheme": "Default Dark+",
-    "python.defaultInterpreterPath": "/usr/local/bin/python3",
-    "vim.vimrc.enable": true,
-    "vim.vimrc.path": "~/.dotfiles/.vimrc",
-    "editor.fontSize": 13,
-    "editor.lineHeight": 23,
-    "workbench.activityBar.visible": false,
-    "terminal.external.osxExec": "Hyper.js",
-    "terminal.integrated.fontFamily": "Fira Code",
-    "terminal.integrated.fontSize": 12,
-    "terminal.integrated.lineHeight": 1.1,
-    "editor.lineNumbers": "off",
-    "terminal.integrated.profiles.linux": {
-        "zsh (login)": {
-          "path": "zsh",
-          "args": ["-l"]
-        }
-      },
-    "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
-    "workbench.statusBar.visible": false,
-    "editor.renderWhitespace": "none",
-    "workbench.editor.showTabs": false,
-    "workbench.editor.enablePreview": false,
-    "gitHistory.showEditorTitleMenuBarIcons": false,
-    "workbench.startupEditor": "none",
-    "emmet.triggerExpansionOnTab": true,
-    "workbench.sideBar.location": "right",
-    "python.formatting.provider":	"autopep8",
-
-    "[javascript]": {
-      "javascript.format.enable": false,
-      "prettier.singleQuote": true,
-      "editor.formatOnSave": true,
-    }
+  "workbench.colorTheme": "Halcyon",
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "php.validate.executablePath": "/usr/local/opt/php@8.0/bin/php",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 23,
+  "workbench.activityBar.visible": false,
+  // "terminal.external.osxExec": "Hyper.js",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1.1,
+  "editor.lineNumbers": "off",
+  // "terminal.integrated.profiles.linux": {
+  //     "zsh (login)": {
+  //       "path": "zsh",
+  //       "args": ["-l"]
+  //     }
+  //   }
+  "explorer.confirmDragAndDrop": false,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.visible": false,
+  "editor.renderWhitespace": "none",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.enablePreview": false,
+  "gitHistory.showEditorTitleMenuBarIcons": false,
+  "workbench.startupEditor": "none",
+  "emmet.triggerExpansionOnTab": true,
+  "workbench.sideBar.location": "right",
+  "python.formatting.provider": "autopep8",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.enableNeovim": true,
+  "workbench.list.keyboardNavigation": "simple",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/matusstafura/.config/nvim/init.vim",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

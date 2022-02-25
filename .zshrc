@@ -34,3 +34,6 @@ export PATH=~/.composer/vendor/bin:$PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
