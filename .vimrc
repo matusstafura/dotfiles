@@ -2,6 +2,7 @@
   call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'vim-test/vim-test'
   Plug 'stsewd/fzf-checkout.vim'
   Plug 'tpope/vim-surround'
   Plug 'itchyny/lightline.vim'
@@ -61,7 +62,9 @@
 " Keybindings: Plugin 
   imap jj <Esc>
   imap kk <Esc>la
-" Keybindings: Split windows  
+" Keybindings: Testing
+  nmap <silent> <leader>t :TestNearest<CR>
+" Keybindings: Split windows & jump 
   nmap sd :vsplit<cr>
   nmap sx :split<cr>
   nmap sh <C-w>h
@@ -78,8 +81,6 @@
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
   nmap <leader>r :RangerWorkingDirectory<cr>
-  nmap <leader>tt <C-w><C-w>
-  nmap <leader>tc <C-w><C-q>
   xnoremap <C-k> :m-2<cr>gv=gv
   xnoremap <C-j> :m'>+<cr>gv=gv
 " Autocommands 

@@ -2,20 +2,13 @@
   "workbench.colorTheme": "Halcyon",
   "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "php.validate.executablePath": "/usr/local/opt/php@8.0/bin/php",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 23,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 28,
   "workbench.activityBar.visible": false,
-  // "terminal.external.osxExec": "Hyper.js",
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.1,
   "editor.lineNumbers": "off",
-  // "terminal.integrated.profiles.linux": {
-  //     "zsh (login)": {
-  //       "path": "zsh",
-  //       "args": ["-l"]
-  //     }
-  //   }
   "explorer.confirmDragAndDrop": false,
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
@@ -30,13 +23,25 @@
   "python.formatting.provider": "autopep8",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "vim.neovimPath": "/usr/local/bin/nvim",
-  "vim.enableNeovim": true,
   "workbench.list.keyboardNavigation": "simple",
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/matusstafura/.config/nvim/init.vim",
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "[vue]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    // "editor.defaultFormatter": "octref.vetur"
+  },
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#115564",
+    "editor.selectionHighlightBackground": "#135564"
+  },
+  "[html]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDelete": false,
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
   }
 }
