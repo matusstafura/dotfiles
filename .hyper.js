@@ -22,7 +22,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.2,
+    lineHeight: 1.4,
 
     // letter spacing as a relative unit
     letterSpacing: 0,

@@ -39,3 +39,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+ctags=/usr/local/bin/ctags

@@ -12,6 +12,21 @@
   Plug 'kaicataldo/material.vim', { 'branch': 'main' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
+  Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'phpactor/ncm2-phpactor'
+  Plug 'arnaud-lb/vim-php-namespace'
+  Plug 'soramugi/auto-ctags.vim'
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+  set completeopt=noinsert,menuone,noselect
+  function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+set tags+=tags,tags.vendors
   if has('nvim')
   Plug 'vim-scripts/indentpython.vim'
   endif
@@ -32,8 +47,7 @@
   set rtp+=~/.fzf
   set autoindent
   set smartindent
-  set tabstop=2
-  set shiftwidth=2
+  set shiftwidth=4
   set expandtab
   set path+=**
   set omnifunc=syntaxcomplete#Complete
@@ -76,8 +90,8 @@
   vmap <leader>cc "*y
   nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
   nmap <leader>cl ggVGc<Esc>
+  nnoremap ff :FZF!<cr>
   nnoremap <leader>nn :NERDTree<cr>
-  nnoremap <leader>f :FZF!<cr>
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
   nmap <leader>r :RangerWorkingDirectory<cr>
@@ -87,7 +101,7 @@
   command! -nargs=1 Ngrep vimgrep "<args>" **
   au BufNewFile, BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
   au BufNewFile, BufRead *.js,*.html,*.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
   au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
