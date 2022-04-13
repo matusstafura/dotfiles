@@ -4,6 +4,7 @@ git clone git@github.com:matusstafura/dotfiles.git ~/.dotfiles
 
 # install packages
 sudo apt install tmux fzf -y
+sudo pip install neovim
 cd ~ && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && chmod u+x nvim.appimage && sudo mv ./nvim.appimage /usr/bin/nvim
 
 # install zsh and theme p10k
