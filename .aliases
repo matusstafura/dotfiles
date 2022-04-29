@@ -1,9 +1,11 @@
 # safe only
 
 # "C" composer
+alias cod="composer dump-autoload"
 alias coi="composer install"
-alias cou="composer update"
+alias coo="composer outdated"
 alias cor="composer require"
+alias cou="composer update"
 
 # "D" dotfiles
 alias drz="source ~/.zshrc"
