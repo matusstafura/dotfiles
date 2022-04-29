@@ -18,6 +18,7 @@
   Plug 'phpactor/ncm2-phpactor'
   Plug 'arnaud-lb/vim-php-namespace'
   Plug 'soramugi/auto-ctags.vim'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   autocmd BufEnter * call ncm2#enable_for_buffer()
   set completeopt=noinsert,menuone,noselect
   function! IPhpInsertUse()
@@ -91,6 +92,7 @@ set tags+=tags,tags.vendors
   nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
   nmap <leader>cl ggVGc<Esc>
   nnoremap ff :FZF!<cr>
+  nnoremap gr :GoRun<cr>
   nnoremap <leader>nn :NERDTree<cr>
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
