@@ -12,25 +12,8 @@
   Plug 'kaicataldo/material.vim', { 'branch': 'main' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
-  Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
   Plug 'ncm2/ncm2'
   Plug 'roxma/nvim-yarp'
-  Plug 'phpactor/ncm2-phpactor'
-  Plug 'arnaud-lb/vim-php-namespace'
-  Plug 'soramugi/auto-ctags.vim'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  autocmd BufEnter * call ncm2#enable_for_buffer()
-  set completeopt=noinsert,menuone,noselect
-  function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-set tags+=tags,tags.vendors
-  if has('nvim')
-  Plug 'vim-scripts/indentpython.vim'
-  endif
   call plug#end()
 " Plugins: Setup 
   set background=dark
@@ -75,8 +58,8 @@ set tags+=tags,tags.vendors
   nnoremap <leader>z :wq<cr>
   nnoremap <leader>s :w!<cr>
 " Keybindings: Plugin 
-  imap jj <Esc>
-  imap kk <Esc>la
+  " imap jj <Esc>
+  " imap kk <Esc>la
 " Keybindings: Testing
   nmap <silent> <leader>t :TestNearest<CR>
 " Keybindings: Split windows & jump 

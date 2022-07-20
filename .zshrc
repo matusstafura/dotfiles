@@ -20,10 +20,12 @@ source $ZSH/oh-my-zsh.sh
 
 # PATHS
 export PATH="/usr/local/sbin:$PATH"
-#export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-#export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-export PATH="/usr/local/opt/php@8.0/bin:$PATH"
-export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+#export PATH="/usr/local/opt/php@8.0/bin:$PATH"
+#export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
+##export PATH="/usr/local/opt/php@8.1/bin:$PATH"
+#export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
 #export PATH="/usr/local/opt/php/bin:$PATH"
 #export PATH="/usr/local/opt/php/sbin:$PATH"
 
@@ -40,3 +42,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ctags=/usr/local/bin/ctags
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
+
