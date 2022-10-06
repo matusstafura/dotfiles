@@ -18,6 +18,7 @@ alias ddd="cd ~/.dotfiles && git pull && drz && cd -"
 # apps and languages
 alias c="code ."
 alias p="python3"
+alias pip="pip3"
 alias r="ranger"
 alias s="subl ."
 alias v="nvim"
