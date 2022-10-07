@@ -58,7 +58,7 @@
   nnoremap <leader>z :wq<cr>
   nnoremap <leader>s :w!<cr>
 " Keybindings: Plugin 
-  " imap jj <Esc>
+  imap jj <Esc>
   " imap kk <Esc>la
 " Keybindings: Testing
   nmap <silent> <leader>t :TestNearest<CR>
