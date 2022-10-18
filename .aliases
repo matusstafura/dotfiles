@@ -76,7 +76,7 @@ alias gch="git checkout"
 alias gdf="git diff"
 alias gsh="git show"
 alias glo="git log --oneline --graph"
-alias gfr="git init && git add . && git commit -m 'first init'"
+alias gfr="git init && git add . && git commit -m 'first init' && git config user.name matusstafura && git config user.email kobe21@gmail.com"
 alias nah="git reset --hard && git clean -df"
 
 # functions
