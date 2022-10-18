@@ -1,7 +1,6 @@
 {
   "workbench.colorTheme": "GitHub Light",
   "terminal.integrated.fontFamily": "JetBrains Mono",
-  // "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "editor.lineHeight": 28,
   "workbench.activityBar.visible": false,
   "editor.fontFamily": "JetBrains Mono",
@@ -12,7 +11,6 @@
   "explorer.confirmDragAndDrop": false,
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.statusBar.visible": false,
   "editor.renderWhitespace": "none",
   "workbench.editor.showTabs": false,
   "workbench.editor.enablePreview": false,
@@ -48,5 +46,14 @@
   "editor.codeActionsOnSaveTimeout": 1200,
   "files.associations": {
     "*.tmpl": "html"
-  }
+  },
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.showExecutionMessage": false,
+  "workbench.statusBar.visible": false,
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.pythonPath": "python3",
+  "code-runner.executorMap": {
+    "python": "/usr/bin/python3"
+  },
+  "editor.largeFileOptimizations": false
 }

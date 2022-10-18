@@ -12,8 +12,7 @@
   Plug 'kaicataldo/material.vim', { 'branch': 'main' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
-  Plug 'ncm2/ncm2'
-  Plug 'roxma/nvim-yarp'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   call plug#end()
 " Plugins: Setup 
   set background=dark
