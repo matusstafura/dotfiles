@@ -78,6 +78,7 @@ alias gsh="git show"
 alias glo="git log --oneline --graph"
 alias gfr="git init && git add . && git commit -m 'first init' && git config user.name matusstafura && git config user.email kobe21@gmail.com"
 alias nah="git reset --hard && git clean -df"
+alias gmine="git config user.name matusstafura && git config user.email kobe21@gmail.com"
 
 # functions
 bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }

@@ -15,12 +15,12 @@ source $ZSH/oh-my-zsh.sh
 
 # PATHS
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 #export PATH="/usr/local/opt/php@8.0/bin:$PATH"
 #export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
-#export PATH="/usr/local/opt/php@8.1/bin:$PATH"
-#export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
+export PATH="/usr/local/opt/php@8.1/bin:$PATH"
+export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"

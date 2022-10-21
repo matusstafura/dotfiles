@@ -55,5 +55,9 @@
   "code-runner.executorMap": {
     "python": "/usr/bin/python3"
   },
-  "editor.largeFileOptimizations": false
+  "editor.largeFileOptimizations": false,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  }
 }
