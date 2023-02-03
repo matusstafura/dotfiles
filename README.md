@@ -1,12 +1,9 @@
 # dotfiles
 
-```
-mv ./dotfiles ~/.dotfiles
-cd ~/.dotfiles
-bash ./setup.sh
+## create symlinks
+
+```shell
+./install
 ```
 
-```bash
-sudo apt-get install ranger -y
-```
 
