@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # p10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -15,8 +22,8 @@ source $ZSH/oh-my-zsh.sh
 
 # PATHS
 export PATH="/usr/local/sbin:$PATH"
-#export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 #export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 #export PATH="/usr/local/opt/php@8.0/bin:$PATH"
 #export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
 export PATH="/usr/local/opt/php@8.1/bin:$PATH"
@@ -40,3 +47,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
 
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
+[[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh

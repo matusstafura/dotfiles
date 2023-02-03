@@ -10,8 +10,7 @@
 	"font_size": 13,
 	"ignored_packages":
 	[
-		// "Vintage",
-/*"PHPUnit Completions",*/
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -23,6 +22,8 @@
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"vintage_start_in_command_mode": true,
-	"word_wrap": "false",
+	"word_wrap": "true",
 	"relative_line_numbers": true,
+	"update_check": false,
+	"rulers": [120],
 }

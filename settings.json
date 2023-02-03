@@ -1,10 +1,9 @@
 {
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "Material Theme Palenight",
   "terminal.integrated.fontFamily": "JetBrains Mono",
   "editor.lineHeight": 28,
   "workbench.activityBar.visible": false,
   "editor.fontFamily": "JetBrains Mono",
-  "editor.fontSize": 14,
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.lineHeight": 1.1,
   "editor.lineNumbers": "relative",
@@ -34,7 +33,7 @@
     // "editor.selectionHighlightBackground": "#135564"
   },
   "[html]": {
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDelete": false,
   "go.toolsManagement.autoUpdate": true,
@@ -55,9 +54,12 @@
   "code-runner.executorMap": {
     "python": "/usr/bin/python3"
   },
+  "editor.insertSpaces": true,
   "editor.largeFileOptimizations": false,
   "[go]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
-  }
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.fontSize": 14
 }

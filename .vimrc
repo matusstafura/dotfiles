@@ -9,14 +9,17 @@
   Plug 'terryma/vim-multiple-cursors'
   Plug 'preservim/nerdtree'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+  " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   call plug#end()
 " Plugins: Setup 
-  set background=dark
+"  set background=dark
   set number relativenumber
+  set visualbell
+  set noerrorbells
   set nocompatible
   set nofoldenable
   set foldmethod=marker
@@ -39,11 +42,11 @@
   set mouse=a
   set foldmethod=indent
   let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-  let g:material_theme_style = 'ocean'
+"  let g:material_theme_style = 'ocean'
   let NERDTreeShowHidden=1
   let g:ranger_map_keys = 0
   let g:surround_indent = 0
-  colorscheme material
+  colorscheme catppuccin-mocha
   filetype plugin indent on
   syntax enable
   if (has('termguicolors'))
