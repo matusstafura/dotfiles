@@ -1,8 +1,6 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' if fn.empty(fn.glob(install_path)) > 0 then fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -32,6 +30,8 @@ use('tpope/vim-surround')
 
 use('preservim/nerdtree')
 
+use('github/copilot.vim')
+
 use({
   'nvim-telescope/telescope.nvim', tag = '0.1.1',
   requires = { 
@@ -46,6 +46,24 @@ use({
 })
 
 use({
+    'nvim-lualine/lualine.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+        require('user.plugins.lualine')
+    end,
+})
+
+use('tpope/vim-unimpaired')
+
+use({
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+        require('user.plugins.bufferline')
+    end,
+})
+
+use({
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
@@ -53,8 +71,19 @@ use({
     end,
 })
 
-use { "catppuccin/nvim", as = "catppuccin" }
-vim.cmd('colorscheme catppuccin-mocha')
+use({ 
+    "catppuccin/nvim", as = "catppuccin",
+    config = function()
+        vim.cmd('colorscheme catppuccin-mocha')
+
+        vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#3c3836' })
+
+        vim.api.nvim_set_hl(0, 'StatusLineNonText', {
+            fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
+            bg = vim.api.nvim_get_hl_by_name('StatusLine', true).foreground,
+        })
+    end,
+})
 
 if packer_bootstrap then
   require('packer').sync()
