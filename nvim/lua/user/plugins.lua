@@ -32,10 +32,26 @@ use('tpope/vim-surround')
 
 use('preservim/nerdtree')
 
-use {
+use({
   'nvim-telescope/telescope.nvim', tag = '0.1.1',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+  requires = { 
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'nvim-telescope/telescope-live-grep-args.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  },
+  config = function()
+      require('user.plugins.telescope')
+  end,
+})
+
+use({
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+        require('user/plugins/nvim-tree')
+    end,
+})
 
 use { "catppuccin/nvim", as = "catppuccin" }
 vim.cmd('colorscheme catppuccin-mocha')
