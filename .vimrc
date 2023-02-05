@@ -53,12 +53,12 @@
     set termguicolors
   endif
 " Keybindings: File manipulation 
-  inoremap <leader>q <esc>:q!<cr>
-  inoremap <leader>z <esc>:wq<cr>
-  inoremap <leader>s <esc>:w!<cr>
-  nnoremap <leader>q :q!<cr>
-  nnoremap <leader>z :wq<cr>
-  nnoremap <leader>s :w!<cr>
+  " inoremap <leader>q <esc>:q!<cr>
+  " inoremap <leader>z <esc>:wq<cr>
+  " inoremap <leader>s <esc>:w!<cr>
+  " nnoremap <leader>q :q!<cr>
+  " nnoremap <leader>z :wq<cr>
+  " nnoremap <leader>s :w!<cr>
 " Keybindings: Plugin 
   imap jj <Esc>
   " imap kk <Esc>la
