@@ -53,6 +53,41 @@ use({
     end,
 })
 
+use({
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate',
+  requires = {
+    'nvim-treesitter/playground',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+  },
+  config = function()
+    require('user.plugins.treesitter')
+  end,
+})
+
+use({
+    'voldikss/vim-floaterm',
+    config = function() 
+        vim.g.floaterm_height = 0.4
+        vim.g.floaterm_wintype = 'split'
+        vim.keymap.set('n', '<leader>t', ':FloatermToggle<CR>')
+        vim.keymap.set('t', '<leader>t', '<C-\\><C-n>:FloatermToggle<CR>')
+    end,
+})
+
+use({
+    'lewis6991/gitsigns.nvim',
+    config = function()
+        require('user.plugins.gitsigns')
+    end,
+})
+
+use({
+    'tpope/vim-fugitive',
+    requires = 'tpope/vim-rhubarb',
+})
+
 use('tpope/vim-unimpaired')
 
 use({

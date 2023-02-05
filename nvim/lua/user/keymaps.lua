@@ -2,8 +2,8 @@
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
--- remap jj to <Esc>
-vim.keymap.set('i', 'jj', '<Esc>')
+-- remap kj to <Esc>
+vim.keymap.set('i', 'kj', '<Esc>')
 
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q!<CR>')
