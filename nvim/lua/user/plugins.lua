@@ -120,6 +120,18 @@ use({
     end,
 })
 
+use({
+    'neovim/nvim-lspconfig',
+    requires = {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim'
+    },
+
+    config = function()
+        require('user.plugins.lspconfig')
+    end,
+})
+
 if packer_bootstrap then
   require('packer').sync()
 end
