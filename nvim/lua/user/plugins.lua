@@ -129,6 +129,10 @@ use({
     end,
 })
 
+use({ 
+    '~/.config/nvim/plugin/sort-lines',
+})
+
 if packer_bootstrap then
   require('packer').sync()
 end
