@@ -129,8 +129,11 @@ use({
     end,
 })
 
-use({ 
-    '~/.config/nvim/plugin/sort-lines',
+use({
+  'windwp/nvim-autopairs',
+  config = function()
+    require('nvim-autopairs').setup()
+  end,
 })
 
 if packer_bootstrap then
