@@ -47,6 +47,7 @@ alias bdp="bin/magento deploy:mode:set production"
 # "G" git aliases
 alias gad="git add"
 alias gaa="git add ."
+alias gpsm="git push origin main"
 alias grs="git reset --soft HEAD~1"
 alias grh="git reset --hard HEAD~1"
 alias gmrd="git merge dev"

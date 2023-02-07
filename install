@@ -14,3 +14,7 @@ ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
 rm $HOME/.zshrc
 ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
+
+rm $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -s $DOTFILES/sublime/Preferences.sublime-settings $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+
