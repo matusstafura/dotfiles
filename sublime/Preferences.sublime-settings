@@ -22,7 +22,7 @@
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"vintage_start_in_command_mode": true,
-	"word_wrap": "true",
+	"word_wrap": "false",
 	"relative_line_numbers": true,
 	"update_check": false,
 	"rulers": [120],
