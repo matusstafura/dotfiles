@@ -1,6 +1,6 @@
 -- remap backslash to leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- remap kj to <Esc>
 vim.keymap.set('i', 'kj', '<Esc>')
@@ -19,4 +19,5 @@ vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sl', '<C-w>l')
 
 vim.keymap.set('n', '<Leader>cl', 'ggVGs')
-vim.keymap.set('n', '<Leader>xx', ':bdelete<CR>')
+
+vim.keymap.set('v', 'y', 'myy`y')

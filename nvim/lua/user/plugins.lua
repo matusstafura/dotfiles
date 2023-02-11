@@ -28,7 +28,27 @@ use('tpope/vim-commentary')
 
 use('tpope/vim-surround')
 
+use('tpope/vim-eunuch')
+
+use('tpope/vim-sleuth')
+
+use('tpope/vim-repeat')
+
 use('preservim/nerdtree')
+
+use({
+    'famiu/bufdelete.nvim',
+    config = function()
+        vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>')
+    end,
+})
+
+use({
+    'sickill/vim-pasta',
+    config = function()
+        vim.g.pasta_disabled_filetypes = { 'fugitive' }
+    end,
+})
 
 use('github/copilot.vim')
 
