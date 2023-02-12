@@ -21,3 +21,11 @@ vim.keymap.set('n', 'sl', '<C-w>l')
 vim.keymap.set('n', '<Leader>cl', 'ggVGs')
 
 vim.keymap.set('v', 'y', 'myy`y')
+
+-- telescope
+vim.keymap.set('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
+vim.keymap.set('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]) -- luacheck: no max line length
+vim.keymap.set('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
+vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])
+vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
+vim.keymap.set('n', '<leader>gg', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]])
