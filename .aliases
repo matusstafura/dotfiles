@@ -12,6 +12,9 @@ alias drz="source ~/.zshrc"
 alias dvz="v ~/Sites/dotfiles/zsh/zshrc"
 alias dva="v ~/Sites/dotfiles/.aliases"
 alias dot="cd ~/Sites/dotfiles"
+alias nvo="nvim ~/Sites/dotfiles/nvim/lua/user/options.lua"
+alias nvk="nvim ~/Sites/dotfiles/nvim/lua/user/keymaps.lua"
+alias nvp="nvim ~/Sites/dotfiles/nvim/lua/user/plugins.lua"
 
 # apps and languages
 alias c="code ."
