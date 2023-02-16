@@ -130,6 +130,14 @@ use({
 
         vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#3c3836' })
 
+        require('catppuccin').setup {
+            color_overrides = {
+                all = {
+                    text = '#ffffff'
+                },
+            }
+        }
+
         vim.api.nvim_set_hl(0, 'StatusLineNonText', {
             fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
             bg = vim.api.nvim_get_hl_by_name('StatusLine', true).foreground,
@@ -155,6 +163,15 @@ use({
     require('nvim-autopairs').setup()
   end,
 })
+
+use({
+    "/Users/matusstafura/Sites/lua/plugins/linkit/",
+})
+
+P = function(thing)
+  print(vim.inspect(thing))
+  return thing
+end
 
 if packer_bootstrap then
   require('packer').sync()

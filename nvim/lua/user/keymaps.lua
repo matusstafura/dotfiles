@@ -22,6 +22,8 @@ vim.keymap.set('n', '<Leader>cl', 'ggVGs')
 
 vim.keymap.set('v', 'y', 'myy`y')
 
+vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
+
 -- telescope
 vim.keymap.set('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
 vim.keymap.set('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]) -- luacheck: no max line length
