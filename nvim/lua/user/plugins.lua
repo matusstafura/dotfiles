@@ -34,7 +34,7 @@ use('tpope/vim-sleuth')
 
 use('tpope/vim-repeat')
 
-use('preservim/nerdtree')
+use({'neoclide/coc.nvim', branch = 'release'})
 
 use({
     'famiu/bufdelete.nvim',
@@ -58,6 +58,8 @@ use({
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
       'nvim-telescope/telescope-live-grep-args.nvim',
+      'nvim-telescope/telescope-file-browser.nvim',
+      'fannheyward/telescope-coc.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
   },
   config = function()
