@@ -34,6 +34,9 @@ use('tpope/vim-sleuth')
 
 use('tpope/vim-repeat')
 
+-- use('matusstafura/wrapit')
+use('/Users/matusstafura/Sites/lua/plugins/wrapit')
+
 -- use({'neoclide/coc.nvim', branch = 'release'})
 use('hrsh7th/nvim-cmp')
 use('hrsh7th/cmp-nvim-lsp')
@@ -134,22 +137,16 @@ use({
 use({ 
     "catppuccin/nvim", as = "catppuccin",
     config = function()
-        vim.cmd('colorscheme catppuccin-mocha')
-
-        vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#3c3836' })
+        vim.cmd('colorscheme catppuccin-latte')
 
         require('catppuccin').setup {
             color_overrides = {
                 all = {
-                    text = '#ffffff'
+                    text = '#000000'
                 },
             }
         }
 
-        vim.api.nvim_set_hl(0, 'StatusLineNonText', {
-            fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
-            bg = vim.api.nvim_get_hl_by_name('StatusLine', true).foreground,
-        })
     end,
 })
 
@@ -172,9 +169,6 @@ use({
   end,
 })
 
-use({
-    "/Users/matusstafura/Sites/lua/plugins/linkit/",
-})
 
 P = function(thing)
   print(vim.inspect(thing))

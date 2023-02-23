@@ -14,11 +14,20 @@ require('lspconfig').volar.setup({
 require('lspconfig').tailwindcss.setup({})
 
 -- Go
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = '*.go',
+--   callback = function()
+--     vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+--   end
+-- })
+
 require('lspconfig').gopls.setup({
   capabilities = capabilities,
   on_attach = function()
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
+    vim.keymap.set('n', '<leader>ii', "<cmd>%! goimports<cr>", { buffer = 0 })
+    vim.keymap.set('n', '<leader>fm', "<cmd>%! gofmt<cr>", { buffer = 0 })
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
     vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
     vim.keymap.set('n', '<leader>ge', vim.diagnostic.goto_next, { buffer = 0 })
