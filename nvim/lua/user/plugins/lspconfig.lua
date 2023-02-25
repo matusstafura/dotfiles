@@ -20,6 +20,12 @@ require('lspconfig').tailwindcss.setup({})
 --     vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
 --   end
 -- })
+vim.diagnostic.config({
+    virtual_text = false,
+    open_float = true,
+    signs = true,
+    float = { border = "single" },
+})
 
 require('lspconfig').gopls.setup({
   capabilities = capabilities,
@@ -30,8 +36,8 @@ require('lspconfig').gopls.setup({
     vim.keymap.set('n', '<leader>fm', "<cmd>%! gofmt<cr>", { buffer = 0 })
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
     vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
-    vim.keymap.set('n', '<leader>ge', vim.diagnostic.goto_next, { buffer = 0 })
-    vim.keymap.set('n', '<leader>ee', "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
+    vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = 0 })
+    vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
     vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = 0 })
   end,
   filetypes = { 'go', 'gomod' },

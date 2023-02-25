@@ -19,7 +19,9 @@ vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sl', '<C-w>l')
 
 vim.keymap.set('n', '<Leader>cl', 'ggVGs')
+vim.keymap.set('n', '<Leader>aa', 'ggVG"*y')
 
+-- remeber last position
 vim.keymap.set('v', 'y', 'myy`y')
 
 vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
