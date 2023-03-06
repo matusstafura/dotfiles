@@ -37,3 +37,8 @@ vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.liv
 vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
 vim.keymap.set('n', '<leader>gg', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]])
 vim.keymap.set('n', '<leader>dot', [[<cmd>lua require('telescope.builtin').find_files({ cwd='~/Sites/dotfiles' })<CR>]])
+
+vim.keymap.set('n', '<leader>cod', '<cmd>Copilot disable<CR> <cmd>echo "copilot disabled"<CR>')
+vim.keymap.set('n', '<leader>coe', '<cmd>Copilot enable<CR> <cmd>echo "copilot enabled"<CR>')
+
+

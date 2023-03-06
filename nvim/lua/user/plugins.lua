@@ -24,18 +24,24 @@ local use = require('packer').use
 
 use('wbthomason/packer.nvim') -- Let packer manage itself
 
+-- tpope
 use('tpope/vim-commentary')
-
 use('tpope/vim-surround')
-
 use('tpope/vim-eunuch')
-
 use('tpope/vim-sleuth')
-
 use('tpope/vim-repeat')
 
 -- use('matusstafura/wrapit')
 use('/Users/matusstafura/Sites/lua/plugins/wrapit')
+
+-- golang
+use({
+    'ray-x/go.nvim',
+    config = function()
+        require('user.plugins.go')
+    end,
+})
+use('ray-x/guihua.lua')
 
 -- use({'neoclide/coc.nvim', branch = 'release'})
 use('hrsh7th/nvim-cmp')
@@ -43,7 +49,6 @@ use('hrsh7th/cmp-nvim-lsp')
 use('hrsh7th/cmp-buffer')
 use('hrsh7th/cmp-path')
 use('L3MON4D3/LuaSnip')
-
 
 use({
     'famiu/bufdelete.nvim',
@@ -58,8 +63,6 @@ use({
         vim.g.pasta_disabled_filetypes = { 'fugitive' }
     end,
 })
-
-use('github/copilot.vim')
 
 use({
   'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -150,6 +153,7 @@ use({
     end,
 })
 
+use({'github/copilot.vim'})
 use({
     'neovim/nvim-lspconfig',
     requires = {
