@@ -5,6 +5,9 @@ vim.g.maplocalleader = ' '
 -- remap kj to <Esc>
 vim.keymap.set('i', 'kj', '<Esc>')
 
+-- jump the )
+vim.keymap.set('i', 'kk', '<Esc>la ')
+
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>')
