@@ -8,6 +8,9 @@ vim.keymap.set('i', 'kj', '<Esc>')
 -- jump the )
 vim.keymap.set('i', 'kk', '<Esc>la ')
 
+-- copy all
+vim.keymap.set('n' , '<Leader>yy', 'gg"*yG')
+
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>')
