@@ -173,6 +173,13 @@ use({
   end,
 })
 
+use({
+    'vim-test/vim-test' ,
+    config = function()
+        require('user/plugins/vim-test')
+    end,
+})
+
 P = function(thing)
   print(vim.inspect(thing))
   return thing
