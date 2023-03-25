@@ -12,6 +12,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
+#
+bindkey -s ^f "~/Sites/dotfiles/scripts/tmux-sessionizer\n"
 
 # load custom dotfiles
 [ -f ~/Sites/dotfiles/.aliases ] && source ~/Sites/dotfiles/.aliases
@@ -25,8 +27,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 # export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 # export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-#export PATH="/usr/local/opt/php@8.0/bin:$PATH"
-#export PATH="/usr/local/opt/php@8.0/sbin:$PATH"
 export PATH="/usr/local/opt/php@8.1/bin:$PATH"
 export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
 
