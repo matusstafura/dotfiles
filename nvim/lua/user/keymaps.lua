@@ -1,21 +1,18 @@
+-- ************************************************************************************
+-- GENERAL SETTINGS
+-- ************************************************************************************
 -- remap backslash to leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- remap kj to <Esc>
-vim.keymap.set('i', 'kj', '<Esc>')
-
--- jump the )
-vim.keymap.set('i', 'kk', '<Esc>la ')
-
--- copy all
-vim.keymap.set('n' , '<Leader>yy', 'gg"*yG')
-
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>')
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>')
 vim.keymap.set('n', '<Leader>s', '<Esc>:w!<CR>')
-
+-- kj to <Esc>
+vim.keymap.set('i', 'kj', '<Esc>')
+-- ************************************************************************************
+-- WINDOWS
+-- ************************************************************************************
 -- windows split and navigation
 vim.keymap.set('n', 'sd', ':vsplit<CR>')
 vim.keymap.set('n', 'sx', ':split<CR>')
@@ -23,17 +20,23 @@ vim.keymap.set('n', 'sh', '<C-w>h')
 vim.keymap.set('n', 'sj', '<C-w>j')
 vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sl', '<C-w>l')
-
-vim.keymap.set('n', '<Leader>cl', 'ggVGs')
-vim.keymap.set('n', '<Leader>aa', 'ggVG"*y')
-
--- remeber last position
-vim.keymap.set('v', 'y', 'myy`y')
-
-vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
+-- next prev
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>')
-
+-- ************************************************************************************
+-- MACROS
+-- ************************************************************************************
+-- copy the contents 
+vim.keymap.set('n' , '<Leader>yy', 'gg"*yG')
+-- clear the contents
+vim.keymap.set('n', '<Leader>cl', 'ggVGs')
+-- jump one place right
+vim.keymap.set('i', '  ', '<Esc>la')
+-- remeber last position
+vim.keymap.set('v', 'y', 'myy`y')
+-- ************************************************************************************
+-- KEYMAPS
+-- ************************************************************************************
 -- telescope
 vim.keymap.set('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
 vim.keymap.set('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]) -- luacheck: no max line length
@@ -42,9 +45,8 @@ vim.keymap.set('n', '<leader>fB', [[<cmd>Telescope file_browser<CR>]])
 vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])
 vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
 vim.keymap.set('n', '<leader>gg', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]])
-vim.keymap.set('n', '<leader>dot', [[<cmd>lua require('telescope.builtin').find_files({ cwd='~/Sites/dotfiles' })<CR>]])
-
+-- copilot
 vim.keymap.set('n', '<leader>cod', '<cmd>Copilot disable<CR> <cmd>echo "copilot disabled"<CR>')
 vim.keymap.set('n', '<leader>coe', '<cmd>Copilot enable<CR> <cmd>echo "copilot enabled"<CR>')
-
-
+-- plenary
+vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
