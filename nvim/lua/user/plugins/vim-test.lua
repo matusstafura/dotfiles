@@ -10,7 +10,7 @@ vim.cmd([[
 
   function! FloatermStrategy(cmd)
     execute 'silent FloatermKill scratch'
-    execute 'FloatermNew! --autoclose=2 --name=scratch '.a:cmd.' |less -X'
+    execute 'FloatermNew! --autoclose=2 --name=scratch '.a:cmd
   endfunction
 
   let g:test#custom_strategies = {'floaterm': function('FloatermStrategy')}

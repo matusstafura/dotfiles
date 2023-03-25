@@ -5,6 +5,7 @@ require('mason-lspconfig').setup({automatic_installation = true})
 
 -- PHP
 require('lspconfig').intelephense.setup({
+  capabilities = capabilities,
   on_attach = function()
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
@@ -19,11 +20,14 @@ require('lspconfig').intelephense.setup({
 
 -- JavaScript
 require('lspconfig').volar.setup({
+  capabilities = capabilities,
   filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
 })
 
 -- TailwindCSS
-require('lspconfig').tailwindcss.setup({})
+require('lspconfig').tailwindcss.setup({
+  capabilities = capabilities,
+})
 
 -- Go
 -- vim.api.nvim_create_autocmd('BufWritePre', {

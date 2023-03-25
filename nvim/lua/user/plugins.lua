@@ -44,11 +44,21 @@ use({
 use('ray-x/guihua.lua')
 
 -- use({'neoclide/coc.nvim', branch = 'release'})
-use('hrsh7th/nvim-cmp')
-use('hrsh7th/cmp-nvim-lsp')
-use('hrsh7th/cmp-buffer')
-use('hrsh7th/cmp-path')
-use('L3MON4D3/LuaSnip')
+use({
+    'hrsh7th/nvim-cmp',
+    requires = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+        'onsails/lspkind-nvim',
+    },
+    config = function()
+        require('user.plugins.cmp')
+    end,
+})
 
 use({
     'famiu/bufdelete.nvim',
