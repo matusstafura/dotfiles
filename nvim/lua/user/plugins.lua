@@ -56,7 +56,7 @@ use({
         'onsails/lspkind-nvim',
     },
     config = function()
-        require('user.plugins.cmp')
+        -- require('user.plugins.cmp')
     end,
 })
 
