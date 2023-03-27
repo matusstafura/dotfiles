@@ -1,3 +1,6 @@
+-- #############################################################################
+-- BOOTSTRAP PACKER
+-- #############################################################################
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' if fn.empty(fn.glob(install_path)) > 0 then fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -24,17 +27,31 @@ local use = require('packer').use
 
 use('wbthomason/packer.nvim') -- Let packer manage itself
 
--- tpope
+-- #############################################################################
+-- PLUGINS
+-- #############################################################################
+
+-- commenting 
+-- examples: gcc, gc
 use('tpope/vim-commentary')
+
+-- surrounds 
+-- examples cs"' cs'<p> cs'<q> ds" ds' ds<p> ds<q>
 use('tpope/vim-surround')
+
+-- unix shell commands
+-- examples: :Remove :Delete :Move :Rename :Chmod :Mkdir :SudoWrite :SudoEdit
 use('tpope/vim-eunuch')
+
+-- better indenting
+-- examples: >>, <<
 use('tpope/vim-sleuth')
+
+-- repeat commands
+-- examples: ., ..
 use('tpope/vim-repeat')
 
--- use('matusstafura/wrapit')
-use('/Users/matusstafura/Sites/lua/plugins/wrapit')
-
--- golang
+-- go
 use({
     'ray-x/go.nvim',
     config = function()
@@ -43,7 +60,7 @@ use({
 })
 use('ray-x/guihua.lua')
 
--- use({'neoclide/coc.nvim', branch = 'release'})
+-- completion
 use({
     'hrsh7th/nvim-cmp',
     requires = {
@@ -183,6 +200,7 @@ use({
   end,
 })
 
+-- testing
 use({
     'vim-test/vim-test' ,
     config = function()
