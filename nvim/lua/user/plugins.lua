@@ -79,9 +79,6 @@ use({
 
 use({
     'famiu/bufdelete.nvim',
-    config = function()
-        vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>')
-    end,
 })
 
 use({
