@@ -177,7 +177,9 @@ use({
     end,
 })
 
-use({'github/copilot.vim'})
+-- Copilot
+-- use({'github/copilot.vim'})
+
 use({
     'neovim/nvim-lspconfig',
     requires = {
@@ -196,6 +198,10 @@ use({
     require('nvim-autopairs').setup()
   end,
 })
+
+use {'dense-analysis/ale',
+    
+}
 
 -- testing
 use({

@@ -1,9 +1,4 @@
 # dotfiles
 
-## create symlinks
-
-```shell
-./install
-```
-
-sd
+## neovim
+:TSInstall <langs>
