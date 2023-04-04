@@ -31,7 +31,7 @@ vim.keymap.set('n' , '<Leader>yy', 'gg"*yG')
 -- clear the contents
 vim.keymap.set('n', '<Leader>cl', 'ggVGs')
 -- jump one place right
-vim.keymap.set('i', '  ', '<Esc>la')
+vim.keymap.set('i', 'jk', '<Esc>la')
 -- remeber last position
 vim.keymap.set('v', 'y', 'myy`y')
 -- move lines

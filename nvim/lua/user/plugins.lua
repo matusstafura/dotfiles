@@ -51,6 +51,15 @@ use('tpope/vim-sleuth')
 -- examples: ., ..
 use('tpope/vim-repeat')
 
+-- git support
+use({
+    'tpope/vim-fugitive',
+    requires = 'tpope/vim-rhubarb',
+})
+
+-- toggle mappings
+use('tpope/vim-unimpaired')
+
 -- go
 use({
     'ray-x/go.nvim',
@@ -58,6 +67,8 @@ use({
         require('user.plugins.go')
     end,
 })
+
+-- lua gui
 use('ray-x/guihua.lua')
 
 -- completion
@@ -77,6 +88,7 @@ use({
     end,
 })
 
+-- easy buffer delete
 use({
     'famiu/bufdelete.nvim',
 })
@@ -138,12 +150,6 @@ use({
     end,
 })
 
-use({
-    'tpope/vim-fugitive',
-    requires = 'tpope/vim-rhubarb',
-})
-
-use('tpope/vim-unimpaired')
 
 use({
     'akinsho/nvim-bufferline.lua',
@@ -199,13 +205,11 @@ use({
   end,
 })
 
-use({'dense-analysis/ale'})
-
-use({'sbdchd/neoformat',
-    config = function()
-      require('user.plugins.neoformat')
-    end,
-})
+-- use({'sbdchd/neoformat',
+--     config = function()
+--       require('user.plugins.neoformat')
+--     end,
+-- })
 
 -- testing
 use({
@@ -223,6 +227,10 @@ end
 if packer_bootstrap then
   require('packer').sync()
 end
+
+vim.cmd([[
+    let b:ale_linters = ['']
+]])
 
 vim.cmd([[
   augroup packer_user_config

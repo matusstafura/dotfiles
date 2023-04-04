@@ -5,7 +5,6 @@ require('mason-lspconfig').setup({automatic_installation = true})
 
 -- PHP
 require('lspconfig').intelephense.setup({
-  capabilities = capabilities,
   on_attach = function()
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
