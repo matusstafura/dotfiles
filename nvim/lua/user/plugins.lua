@@ -199,9 +199,13 @@ use({
   end,
 })
 
-use {'dense-analysis/ale',
-    
-}
+use({'dense-analysis/ale'})
+
+use({'sbdchd/neoformat',
+    config = function()
+      require('user.plugins.neoformat')
+    end,
+})
 
 -- testing
 use({
