@@ -2,18 +2,15 @@
   call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'vim-test/vim-test'
   Plug 'stsewd/fzf-checkout.vim'
   Plug 'tpope/vim-surround'
   Plug 'itchyny/lightline.vim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'preservim/nerdtree'
   Plug 'jiangmiao/auto-pairs'
-  " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+  Plug 'catppuccin/nvim', { 'as': 'latte' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   call plug#end()
 " Plugins: Setup 
 "  set background=dark
@@ -46,19 +43,21 @@
   let NERDTreeShowHidden=1
   let g:ranger_map_keys = 0
   let g:surround_indent = 0
-  colorscheme catppuccin-mocha
+  colorscheme catppuccin-latte
   filetype plugin indent on
   syntax enable
   if (has('termguicolors'))
     set termguicolors
   endif
 " Keybindings: File manipulation 
+  nnoremap <SPACE> <Nop>
+  let mapleader=" "
   " inoremap <leader>q <esc>:q!<cr>
   " inoremap <leader>z <esc>:wq<cr>
   " inoremap <leader>s <esc>:w!<cr>
-  " nnoremap <leader>q :q!<cr>
-  " nnoremap <leader>z :wq<cr>
-  " nnoremap <leader>s :w!<cr>
+  nnoremap <leader>q :q!<cr>
+  nnoremap <leader>z :wq<cr>
+  nnoremap <leader>s :w!<cr>
 " Keybindings: Plugin 
   imap jj <Esc>
   " imap kk <Esc>la
@@ -77,7 +76,6 @@
   nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
   nmap <leader>cl ggVGc<Esc>
   nnoremap ff :FZF!<cr>
-  nnoremap gr :GoRun<cr>
   nnoremap <leader>nn :NERDTree<cr>
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
