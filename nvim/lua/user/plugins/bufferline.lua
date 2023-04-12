@@ -3,7 +3,10 @@ require('bufferline').setup({
     indicator = {
       icon = ' ',
     },
+    show_buffer_close_icon = false,
     show_close_icon = false,
+    buffer_close_icon = '',
+    close_icon = '',
     tab_size = 0,
     max_name_length = 25,
     offsets = {
@@ -19,7 +22,7 @@ require('bufferline').setup({
     custom_areas = {
       left = function()
         return {
-          { text = '    ', fg = '#8fff6d' },
+          { text = '    ', fg = '#16621C' },
         }
       end,
     },

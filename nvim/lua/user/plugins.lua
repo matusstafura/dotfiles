@@ -171,7 +171,6 @@ use({
     "catppuccin/nvim", as = "catppuccin",
     config = function()
         vim.cmd('colorscheme catppuccin-latte')
-
         require('catppuccin').setup {
             color_overrides = {
                 all = {
@@ -179,7 +178,6 @@ use({
                 },
             }
         }
-
     end,
 })
 
@@ -204,12 +202,6 @@ use({
     require('nvim-autopairs').setup()
   end,
 })
-
--- use({'sbdchd/neoformat',
---     config = function()
---       require('user.plugins.neoformat')
---     end,
--- })
 
 -- testing
 use({
