@@ -182,7 +182,7 @@ use({
 })
 
 -- Copilot
--- use({'github/copilot.vim'})
+use({'github/copilot.vim'})
 
 use({
     'neovim/nvim-lspconfig',
@@ -207,9 +207,18 @@ use({
 use({
     'vim-test/vim-test' ,
     config = function()
-        require('user/plugins/vim-test')
+        require('user.plugins.vim-test')
     end,
 })
+
+-- dashboard-nvim
+use {
+  'glepnir/dashboard-nvim',
+  config = function()
+      require('user.plugins.dashboard')
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
 
 P = function(thing)
   print(vim.inspect(thing))
