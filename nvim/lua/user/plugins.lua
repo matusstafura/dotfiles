@@ -230,8 +230,9 @@ if packer_bootstrap then
 end
 
 vim.cmd([[
-    let b:ale_linters = ['']
+    let b:ale_fixers = {'php': ['php_cs_fixer']}
 ]])
+
 
 vim.cmd([[
   augroup packer_user_config

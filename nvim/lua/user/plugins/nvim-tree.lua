@@ -18,6 +18,9 @@ require('nvim-tree').setup({
       -- inline_arrows = false,
     },
   },
+  filters = {
+    dotfiles = true,
+  },
 })
 
 vim.cmd([[

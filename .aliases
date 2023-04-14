@@ -17,11 +17,8 @@ alias nvk="nvim ~/Sites/dotfiles/nvim/lua/user/keymaps.lua"
 alias nvp="nvim ~/Sites/dotfiles/nvim/lua/user/plugins.lua"
 
 # apps and languages
-alias c="code ."
 alias p="python3"
-alias pip="pip3"
 alias r="ranger"
-alias s="subl ."
 alias v="nvim"
 
 # other
