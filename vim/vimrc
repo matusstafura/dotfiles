@@ -49,19 +49,15 @@
   if (has('termguicolors'))
     set termguicolors
   endif
-" Keybindings: File manipulation 
+" ************************************************************************************
+" KEYMAPS
+" ************************************************************************************
   nnoremap <SPACE> <Nop>
   let mapleader=" "
-  " inoremap <leader>q <esc>:q!<cr>
-  " inoremap <leader>z <esc>:wq<cr>
-  " inoremap <leader>s <esc>:w!<cr>
   nnoremap <leader>q :q!<cr>
   nnoremap <leader>z :wq<cr>
   nnoremap <leader>s :w!<cr>
-" Keybindings: Plugin 
-  imap jj <Esc>
-  " imap kk <Esc>la
-" Keybindings: Testing
+  nnoremap <leader>kj <Esc>
   nmap <silent> <leader>t :TestNearest<CR>
 " Keybindings: Split windows & jump 
   nmap sd :vsplit<cr>
@@ -70,6 +66,10 @@
   nmap sj <C-w>j
   nmap sk <C-w>k
   nmap sl <C-w>l
+  nnoremap <C-n> <cmd>cnext<CR>
+  nnoremap <C-p> <cmd>cprev<CR>
+  inoremap jk <Esc>la
+  vnoremap y myy`y
   nmap <leader>aa ggVG"*y
   nmap <leader>ii ciw'<C-r>"'jj
   vmap <leader>cc "*y
@@ -80,8 +80,8 @@
   nnoremap <leader>rd :sort u<cr><esc>
   nnoremap <leader>el :g/^$/d<cr>
   nmap <leader>r :RangerWorkingDirectory<cr>
-  xnoremap <C-k> :m-2<cr>gv=gv
-  xnoremap <C-j> :m'>+<cr>gv=gv
+  vnoremap J', ":m \'>+1<CR>gv=gv"
+  vnoremap K', ":m \'<-2<CR>gv=gv"
 " Autocommands 
   command! -nargs=1 Ngrep vimgrep "<args>" **
   au BufNewFile, BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
