@@ -23,7 +23,9 @@ alias v="nvim"
 
 # other
 alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
-alias toh="find . -type f -exec mv {} {}.html \;"
+alias ren="find . -type f -exec mv {} {}.$1 \;"
+alias del="find . -type f -name '*.$1' -delete"
+alias own="find . -type f ! -name '*.$1' -delete"
 
 # Laravel
 alias art="php artisan"
