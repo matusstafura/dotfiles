@@ -3,7 +3,6 @@ local db = require('dashboard')
 db.setup({
 theme = 'hyper',
 config = {
-  -- https://www.coolgenerator.com/ascii-text-generator
   header = {
     '',
     ' ██████╗ ███████╗████████╗██╗███╗   ██╗ █████╗ ████████╗ ██████╗ ',

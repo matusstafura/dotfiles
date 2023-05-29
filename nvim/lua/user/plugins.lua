@@ -82,6 +82,7 @@ use({
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
         'onsails/lspkind-nvim',
+        'rafamadriz/friendly-snippets'
     },
     config = function()
         -- require('user.plugins.cmp')
@@ -212,13 +213,13 @@ use({
 })
 
 -- dashboard-nvim
-use {
-  'glepnir/dashboard-nvim',
-  config = function()
-      require('user.plugins.dashboard')
-  end,
-  requires = {'nvim-tree/nvim-web-devicons'}
-}
+-- use {
+--   'glepnir/dashboard-nvim',
+--   config = function()
+--       require('user.plugins.dashboard')
+--   end,
+--   requires = {'nvim-tree/nvim-web-devicons'}
+-- }
 
 P = function(thing)
   print(vim.inspect(thing))
@@ -230,7 +231,9 @@ if packer_bootstrap then
 end
 
 vim.cmd([[
-    let b:ale_fixers = {'php': ['php_cs_fixer']}
+    let g:ale_fixers = {'php': ['phpcbf'], 'html': ['html-beautify']}
+    let g:ale_linters = {'php': ['phpstan'], 'html': ['htmlhint']}
+    let g:ale_lint_on_save = 1
 ]])
 
 
