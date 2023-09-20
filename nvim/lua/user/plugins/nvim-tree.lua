@@ -1,12 +1,9 @@
--- vim.g.nvim_tree_indent_markers = 1
--- vim.g.nvim_tree_git_hl = 1
-
 require('nvim-tree').setup({
   git = {
     ignore = false,
   },
   renderer = {
-    highlight_opened_files = '1',
+    highlight_opened_files = 'name',
     group_empty = true,
     icons = {
       show = {
@@ -29,3 +26,4 @@ vim.cmd([[
     autocmd ColorScheme * highlight NvimTreeIndentMarker guifg=#30323E
   augroup end
 ]])
+

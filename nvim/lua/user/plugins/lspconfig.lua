@@ -28,6 +28,17 @@ require('lspconfig').tailwindcss.setup({
   capabilities = capabilities,
 })
 
+require('lspconfig').rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {
+    "rustup",
+    "run",
+    "rust-analyzer",
+    "stable",
+  }
+})
+
 -- Go
 -- vim.api.nvim_create_autocmd('BufWritePre', {
 --   pattern = '*.go',

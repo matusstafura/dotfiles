@@ -68,6 +68,9 @@ use({
     end,
 })
 
+-- automatically create parend dirs when saving
+use('jessarcher/vim-heritage')
+
 -- lua gui
 use('ray-x/guihua.lua')
 
@@ -151,7 +154,6 @@ use({
     end,
 })
 
-
 use({
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -183,7 +185,7 @@ use({
 })
 
 -- Copilot
-use({'github/copilot.vim'})
+use({'github/copilot.vim', })
 
 use({
     'neovim/nvim-lspconfig',
@@ -235,7 +237,6 @@ vim.cmd([[
     let g:ale_linters = {'php': ['phpstan'], 'html': ['htmlhint']}
     let g:ale_lint_on_save = 1
 ]])
-
 
 vim.cmd([[
   augroup packer_user_config
