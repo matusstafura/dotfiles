@@ -3,31 +3,33 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason').setup()
 require('mason-lspconfig').setup({automatic_installation = true})
 
+-- LSP keymaps 
+local on_attach = function(client, bufnr)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
+  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
+  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
+  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
+  vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = 0 })
+  vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = 0 })
+  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = 0 })
+end
+
 -- PHP
 require('lspconfig').intelephense.setup({
-  on_attach = function()
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
-    vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = 0 })
-    vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = 0 })
-  end,
+  capabilities = capabilities,
+  filetypes = { 'php' },
+  on_attach = on_attach,
 })
 
 -- JavaScript
 require('lspconfig').volar.setup({
   capabilities = capabilities,
   filetypes = { 'vue', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+  on_attach = on_attach,
 })
 
--- TailwindCSS
-require('lspconfig').tailwindcss.setup({
-  capabilities = capabilities,
-})
-
+-- Rust
 require('lspconfig').rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -36,39 +38,33 @@ require('lspconfig').rust_analyzer.setup({
     "run",
     "rust-analyzer",
     "stable",
-  }
+  },
+  filetypes = { 'rust' },
 })
 
 -- Go
--- vim.api.nvim_create_autocmd('BufWritePre', {
---   pattern = '*.go',
---   callback = function()
---     vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
---   end
--- })
-vim.diagnostic.config({
-    virtual_text = false,
-    open_float = true,
-    signs = true,
-    float = { border = "single" },
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.go',
+  callback = function()
+    vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+  end
 })
 
 require('lspconfig').gopls.setup({
   capabilities = capabilities,
-  on_attach = function()
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
-    vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
-    vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = 0 })
-    vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
-    vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = 0 })
-  end,
   filetypes = { 'go', 'gomod' },
+  on_attach = on_attach,
 })
---
--- Set up nvim-cmp.
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.diagnostic.on_publish_diagnostics, {
+  signs = false,
+  virtual_text = false,
+  underline = false,
+  update_in_insert = false,
+})
+
+-- Set up nvim-cmp.
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 local cmp = require'cmp'
 
@@ -87,7 +83,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), 
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

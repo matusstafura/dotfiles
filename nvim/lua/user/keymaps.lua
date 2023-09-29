@@ -61,25 +61,27 @@ vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
 -- [G]
 -- git
 vim.keymap.set('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { desc = 'git commits' })
+vim.keymap.set('n', '<leader>ga', '<cmd>Git add %<CR>', { desc = 'git add' })
 vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = 'git status' })
 vim.keymap.set('n', '<leader>gf', '<cmd>Git diff<CR>', { desc = 'git diff' })
 vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = 'git commit' })
 vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = 'git push' })
-vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
-vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
-vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
-vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
-vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>', { desc = 'next hunk' })
+vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>', { desc = 'prev hunk' })
+vim.keymap.set('n', 'hs', ':Gitsigns stage_hunk<CR>', { desc = 'stage hunk' })
+vim.keymap.set('n', 'hS', ':Gitsigns undo_stage_hunk<CR>', { desc = 'undo stage hunk' })
+vim.keymap.set('n', 'hp', ':Gitsigns preview_hunk<CR>', { desc = 'preview hunk' })
+vim.keymap.set('n', 'hr', ':Gitsigns reset_hunk<CR>', { desc = 'reset hunk' })
 -- [N]
 -- nvimtree
 vim.keymap.set('n', '<leader>n', ':NvimTreeFindFileToggle<CR>')
 -- [T]
 -- terminal
-vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>')
-vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>')
-vim.keymap.set('n', '<leader>tc', ':FloatermNew<CR>')
-vim.keymap.set('n', '<leader>tn', ':FloatermNext<CR>') -- collision with test
-vim.keymap.set('n', '<leader>tp', ':FloatermPrev<CR>')
+vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
+vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
+vim.keymap.set('n', '<leader>tc', ':FloatermNew<CR>', { desc = 'terminal create' })
+vim.keymap.set('n', '<leader>tn', ':FloatermNext<CR>', { desc = 'terminal next' })
+vim.keymap.set('n', '<leader>tp', ':FloatermPrev<CR>', { desc = 'terminal prev' })
 vim.keymap.set('n', '<leader>rm', ':FloatermNew --position=right --width=0.5 --height=0.3 --autoclose=0 go run main.go<CR>')
 -- testing
 vim.keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { desc = 'test nearest' })
@@ -89,4 +91,7 @@ vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })
 vim.keymap.set('n', '<Leader>tv', ':TestVisit<CR>', { desc = 'test visit' })
 -- [X]
 -- buffer
-vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>')
+vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>', { desc = 'buffer delete' })
+
+vim.keymap.set('n', '<leader>fx', ':silent !./vendor/bin/pint %<CR>', { desc = 'pint' })
+vim.keymap.set('t', '<leader>mm', '<C-\\><C-n><CR>', { desc = 'terminal toggle' })
