@@ -20,6 +20,9 @@ require('lspconfig').intelephense.setup({
   capabilities = capabilities,
   filetypes = { 'php' },
   on_attach = on_attach,
+  handlers = {
+    ['textDocument/publishDiagnostics'] = function() end
+  }
 })
 
 -- JavaScript
@@ -54,6 +57,7 @@ require('lspconfig').gopls.setup({
   capabilities = capabilities,
   filetypes = { 'go', 'gomod' },
   on_attach = on_attach,
+  vim.keymap.set('n', '<leader>co', ":!go test -coverprofile=coverage.out && go tool cover -html=coverage.out<CR>")
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
