@@ -12,16 +12,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # load custom dotfiles
-[ -f ./.aliases ] && source ./.aliases
-[ -f ./.mycnf ] && source ./.mycnf
-[ -f ./scripts/scripts ] && source ./scripts/scripts
-[ -f ./scripts/tmux-sessionizer ]
+[ -f ~/dotfiles/.aliases ] && source ~/dotfiles/.aliases
+[ -f ~/dotfiles/.mycnf ] && source ~/dotfiles/.mycnf
+[ -f ~/dotfiles/scripts/scripts ] && source ~/dotfiles/scripts/scripts
+[ -f ~/dotfiles/scripts/tmux-sessionizer ]
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # fzf in tmux
-bindkey -s ^f "source ./scripts/tmux-sessionizer\n"
+bindkey -s ^f "source ~/dotfiles/scripts/tmux-sessionizer\n"
 
 # PATHS
 export PATH="/usr/local/sbin:$PATH"
