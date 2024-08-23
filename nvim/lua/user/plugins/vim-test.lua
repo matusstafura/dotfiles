@@ -1,6 +1,6 @@
 vim.cmd([[
-  let test#php#phpunit#executable = 'deliver vendor/bin/phpunit'
-  let test#php#phpunit#options = '--colors=always'
+  let test#php#pest#executable = 'vendor/bin/pest'
+  let test#php#pest#options = '--colors=always'
 
   function! FloatermStrategy(cmd)
     execute 'silent FloatermKill scratch'

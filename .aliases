@@ -26,11 +26,12 @@ alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
 alias ren="find . -type f -exec mv {} {}.$1 \;"
 alias del="find . -type f -name '*.$1' -delete"
 alias own="find . -type f ! -name '*.$1' -delete"
+alias ela="~/elasticsearch/bin/elasticsearch"
 
 # Laravel
 alias art="php artisan"
 alias pp="./vendor/bin/phpunit"
-alias ps="./vendor/bin/pest"
+alias pest="./vendor/bin/pest"
 
 # Magento
 alias bms="bin/magento module:status"
@@ -65,4 +66,5 @@ alias glo="git log --oneline --graph"
 alias gfr="git init && git add . && git commit -m 'first init' && git config user.name matusstafura && git config user.email kobe21@gmail.com"
 alias nah="git reset --hard && git clean -df"
 alias gme="git config user.name matusstafura && git config user.email kobe21@gmail.com"
+alias gbr="git branch"
 

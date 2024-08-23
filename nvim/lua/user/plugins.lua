@@ -105,7 +105,7 @@ use({
 })
 
 use({
-  'nvim-telescope/telescope.nvim', tag = '0.1.4',
+  'nvim-telescope/telescope.nvim', tag = '0.1.8',
   requires = { 
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
@@ -186,6 +186,8 @@ use({
 
 -- Copilot
 use({'github/copilot.vim', })
+-- lua
+vim.g.copilot_node_command = "~/.nvm/versions/node/v16.15.0/bin/node"
 
 use({
     'neovim/nvim-lspconfig',

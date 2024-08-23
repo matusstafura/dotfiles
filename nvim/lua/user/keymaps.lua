@@ -83,6 +83,7 @@ vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })
 vim.keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { desc = 'test nearest' })
 vim.keymap.set('n', '<Leader>ts', ':TestSuite<CR>', { desc = 'test suite' })
 vim.keymap.set('n', '<Leader>tv', ':TestVisit<CR>', { desc = 'test visit' })
+vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with bail' })
 -- [X]
 -- buffer
 vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>', { desc = 'buffer delete' })
