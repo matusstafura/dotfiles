@@ -198,4 +198,3 @@ for_window [class="obsidian"] fullscreen
 for_window [class="Google-chrome"] fullscreen
 for_window [class="org.wezfurlong.wezterm"] fullscreen
 for_window [class="^Sublime_text$"] fullscreen
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh

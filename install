@@ -9,6 +9,10 @@ ln -s $DOTFILES/wezterm/.wezterm.lua $HOME/.wezterm.lua
 rm -rf $HOME/.config/i3
 ln -s $DOTFILES/i3 $HOME/.config/i3
 
+# sublime
+rm -rf $HOME/.config/sublime-text-3
+ln -s $DOTFILES/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+
 # neovim
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
