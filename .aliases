@@ -16,6 +16,10 @@ alias nvo="nvim ~/dotfiles/nvim/lua/user/options.lua"
 alias nvk="nvim ~/dotfiles/nvim/lua/user/keymaps.lua"
 alias nvp="nvim ~/dotfiles/nvim/lua/user/plugins.lua"
 
+# "K" kubectl
+alias kc="kubectl"
+alias mk="minikube"
+
 # apps and languages
 alias p="python3"
 alias r="ranger"

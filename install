@@ -2,14 +2,12 @@
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# kitty
-mkdir -p $HOME/.config/kitty
-rm -rf $HOME/.config/kitty
-ln -s $DOTFILES/kitty $HOME/.config/kitty
+# wezterm
+ln -s $DOTFILES/wezterm/.wezterm.lua $HOME/.wezterm.lua
 
 # neovim
-mkdir -p $HOME/.config/nvim
 rm -rf $HOME/.config/nvim
+mkdir -p $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 # tmux
