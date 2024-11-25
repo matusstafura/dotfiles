@@ -173,14 +173,13 @@ use({
 use({ 
     "catppuccin/nvim", as = "catppuccin",
     config = function()
-        vim.cmd('colorscheme catppuccin-latte')
         require('catppuccin').setup {
             color_overrides = {
                 all = {
-                    text = '#000000'
                 },
             }
         }
+        vim.cmd('colorscheme catppuccin-mocha')
     end,
 })
 
