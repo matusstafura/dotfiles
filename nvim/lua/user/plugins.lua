@@ -176,6 +176,7 @@ use({
         require('catppuccin').setup {
             color_overrides = {
                 all = {
+                    text = '#FFFFFF'
                 },
             }
         }
