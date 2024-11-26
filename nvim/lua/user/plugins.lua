@@ -176,11 +176,11 @@ use({
         require('catppuccin').setup {
             color_overrides = {
                 all = {
-                    text = '#FFFFFF'
+                    -- text = '#FFFFFF'
                 },
             }
         }
-        vim.cmd('colorscheme catppuccin-mocha')
+        vim.cmd('colorscheme catppuccin-latte')
     end,
 })
 
