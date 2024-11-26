@@ -25,23 +25,19 @@ bindkey -s ^f "source ~/dotfiles/scripts/tmux-sessionizer\n"
 
 # PATHS
 export PATH="/usr/local/sbin:$PATH"
-# export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-# export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@8.1/bin:$PATH"
 export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
-
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 ctags=/usr/local/bin/ctags
 
 export NVM_DIR="$HOME/.nvm"
@@ -49,21 +45,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-
-# Herd injected PHP binary.
+# Herd 
 export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.1 configuration.
 export HERD_PHP_81_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/81/"
 
-
-# Herd injected PHP 7.4 configuration.
-export HERD_PHP_74_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/74/"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
