@@ -1,54 +1,101 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# -------------------------------------
+# Powerlevel10k Instant Prompt
+# -------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# -------------------------------------
+# General Settings
+# -------------------------------------
 export EDITOR=/usr/local/bin/nvim
 
-# p10k
+# -------------------------------------
+# Powerlevel10k Configuration
+# -------------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
-# load custom dotfiles
-[ -f ~/dotfiles/.aliases ] && source ~/dotfiles/.aliases
-[ -f ~/dotfiles/.mycnf ] && source ~/dotfiles/.mycnf
-[ -f ~/dotfiles/scripts/scripts ] && source ~/dotfiles/scripts/scripts
-[ -f ~/dotfiles/scripts/tmux-sessionizer ]
+# -------------------------------------
+# Custom Dotfiles
+# -------------------------------------
+load_if_exists $HOME/dotfiles/.aliases
+load_if_exists $HOME/dotfiles/.mycnf
+load_if_exists $HOME/dotfiles/scripts/scripts
+[ -f $HOME/dotfiles/scripts/tmux-sessionizer ] && source $HOME/dotfiles/scripts/tmux-sessionizer
 
-export ZSH=~/.oh-my-zsh
+# -------------------------------------
+# Oh-My-Zsh
+# -------------------------------------
+export ZSH=$HOME/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# fzf in tmux
-bindkey -s ^f "source ~/dotfiles/scripts/tmux-sessionizer\n"
+# -------------------------------------
+# FZF in Tmux
+# -------------------------------------
+bindkey -s ^f "source $HOME/dotfiles/scripts/tmux-sessionizer\n"
 
-# PATHS
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/php@8.1/bin:$PATH"
-export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH=~/.composer/vendor/bin:$PATH
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# -------------------------------------
+# PATH Configuration
+# -------------------------------------
+export PATH="$HOME/.composer/vendor/bin:$PATH" # Composer global binaries
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+# -------------------------------------
+# PHP Versions
+# -------------------------------------
+export PATH="/usr/local/opt/php@8.1/bin:/usr/local/opt/php@8.1/sbin:$PATH"
+export PATH="/usr/local/opt/php@8.3/bin:/usr/local/opt/php@8.3/sbin:$PATH"
+
+# -------------------------------------
+# MySQL and MariaDB
+# -------------------------------------
+export PATH="/usr/local/opt/mysql@5.7/bin:/usr/local/opt/mariadb@10.1/bin:$PATH"
+
+# -------------------------------------
+# ICU4C (Unicode libraries)
+# -------------------------------------
+export PATH="/usr/local/opt/icu4c/bin:/usr/local/opt/icu4c/sbin:$PATH"
+
+# -------------------------------------
+# Go (GOPATH and binaries)
+# -------------------------------------
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# -------------------------------------
+# LLVM (Clang and tools)
+# -------------------------------------
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# -------------------------------------
+# Ruby (rbenv)
+# -------------------------------------
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
 
-ctags=/usr/local/bin/ctags
-
+# -------------------------------------
+# NVM (Node Version Manager)
+# -------------------------------------
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
+# -------------------------------------
+# Herd (PHP configuration)
+# -------------------------------------
+export PATH="$HOME/Library/Application Support/Herd/bin:$PATH"
+export HERD_PHP_83_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/83/"
+export HERD_PHP_81_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/81/"
 
-# Herd 
-export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
-export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
-export HERD_PHP_81_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/81/"
+# -------------------------------------
+# FZF (Fuzzy Finder)
+# -------------------------------------
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# -------------------------------------
+# Ctags
+# -------------------------------------
+export ctags="/usr/local/bin/ctags"
+
