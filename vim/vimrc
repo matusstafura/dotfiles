@@ -8,12 +8,11 @@
   Plug 'terryma/vim-multiple-cursors'
   Plug 'preservim/nerdtree'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'catppuccin/nvim', { 'as': 'mocha' }
+  Plug 'catppuccin/nvim', { 'as': 'latte' }
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
   call plug#end()
 " Plugins: Setup 
-"  set background=dark
   set number relativenumber
   set visualbell
   set noerrorbells
@@ -39,11 +38,10 @@
   set mouse=a
   set foldmethod=indent
   let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-"  let g:material_theme_style = 'ocean'
   let NERDTreeShowHidden=1
   let g:ranger_map_keys = 0
   let g:surround_indent = 0
-  colorscheme catppuccin-mocha
+  colorscheme catppuccin-latte
   filetype plugin indent on
   syntax enable
   if (has('termguicolors'))
@@ -57,7 +55,7 @@
   nnoremap <leader>q :q!<cr>
   nnoremap <leader>z :wq<cr>
   nnoremap <leader>s :w!<cr>
-  nnoremap <leader>kj <Esc>
+  inoremap kj <Esc>
   nmap <silent> <leader>t :TestNearest<CR>
 " Keybindings: Split windows & jump 
   nmap sd :vsplit<cr>
