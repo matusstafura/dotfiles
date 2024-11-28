@@ -21,7 +21,9 @@ vim.keymap.set('n', 'sj', '<C-w>j', { desc = 'move down in split' })
 vim.keymap.set('n', 'sk', '<C-w>k', { desc = 'move up in split' })
 vim.keymap.set('n', 'sl', '<C-w>l', { desc = 'move right in split' })
 vim.keymap.set('n', 'sq', '<C-w>=', { desc = 'equalize splits' })
--- next prev
+-- rest
+vim.keymap.set('n', 'H', '^', { desc = 'move to the beginning of the line'})
+vim.keymap.set('n', 'L', '$', { desc = 'move to the end of the line'})
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>')
 vim.keymap.set('i', ';;', '<Esc>A;', { desc = 'add semicolon at the end of the line' })

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+en() {
+    if [ -z "$1" ]; then
+        echo "Usage: en <filename>"
+        return 1
+    fi
+
+    input_file="$1"
+    output_file="${input_file}.aes256"
+
+    openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000 -in "$input_file" -out "$output_file"
+
+    if [ $? -eq 0 ]; then
+        echo "Encrypted file created: $output_file"
+    else
+        echo "Encryption failed."
+    fi
+}
+
+de() {
+    if [ -z "$1" ]; then
+        echo "Usage: de <filename>"
+        return 1
+    fi
+
+    input_file="$1"
+    # Remove the .aes256 extension for the output filename
+    output_file="${input_file%.aes256}"
+
+    openssl enc -aes-256-cbc -d -salt -pbkdf2 -iter 100000 -in "$input_file" -out "$output_file"
+
+    if [ $? -eq 0 ]; then
+        echo "Decrypted file created: $output_file"
+    else
+        echo "Decryption failed."
+    fi
+}
+

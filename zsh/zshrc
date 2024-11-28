@@ -18,6 +18,7 @@ export EDITOR=/usr/local/bin/nvim
 [ -f ~/dotfiles/.aliases ] && source ~/dotfiles/.aliases
 [ -f ~/dotfiles/.mycnf ] && source ~/dotfiles/.mycnf
 [ -f ~/dotfiles/scripts/scripts ] && source ~/dotfiles/scripts/scripts
+[ -f ~/dotfiles/scripts/aes ] && source ~/dotfiles/scripts/aes
 [ -f ~/dotfiles/scripts/tmux-sessionizer ]
 
 # -------------------------------------
