@@ -1,29 +1,40 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# -------------------------------------
+# powerlevel10k
+# -------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-export EDITOR=/usr/local/bin/nvim
-
-# p10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# -------------------------------------
+# nvim
+# -------------------------------------
+export EDITOR=/usr/local/bin/nvim
+
+# -------------------------------------
 # load custom dotfiles
+# -------------------------------------
 [ -f ~/dotfiles/.aliases ] && source ~/dotfiles/.aliases
 [ -f ~/dotfiles/.mycnf ] && source ~/dotfiles/.mycnf
 [ -f ~/dotfiles/scripts/scripts ] && source ~/dotfiles/scripts/scripts
 [ -f ~/dotfiles/scripts/tmux-sessionizer ]
 
+# -------------------------------------
+# zsh
+# -------------------------------------
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# fzf in tmux
+# -------------------------------------
+# fzf 
+# -------------------------------------
 bindkey -s ^f "source ~/dotfiles/scripts/tmux-sessionizer\n"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# -------------------------------------
 # PATHS
+# -------------------------------------
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/php@8.1/bin:$PATH"
 export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
@@ -40,15 +51,15 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ctags=/usr/local/bin/ctags
 
+# -------------------------------------
+# nvm
+# -------------------------------------
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
 
 # Herd 
 export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
 export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
 export HERD_PHP_81_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/81/"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
