@@ -10,7 +10,8 @@ rm -rf $HOME/.config/i3
 ln -s $DOTFILES/i3 $HOME/.config/i3
 
 # sublime
-rm -rf $HOME/.config/sublime-text-3
+rm -rf $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+mkdir -p $HOME/.config/sublime-text-3/Packages/User
 ln -s $DOTFILES/sublime/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 
 # neovim
