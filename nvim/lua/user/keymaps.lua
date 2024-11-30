@@ -31,7 +31,8 @@ vim.keymap.set('i', ';;', '<Esc>A;', { desc = 'add semicolon at the end of the l
 -- MACROS
 -- ************************************************************************************
 vim.keymap.set('n' , '<Leader>yy', 'gg"*yG', { desc = 'copy all the contents' })
-vim.keymap.set('n', '<Leader>cl', 'ggVGs', { desc = 'clear all the contents' })
+vim.keymap.set('n', '<Leader>cl', 'ggVGc', { desc = 'clear all the contents and keeps clipboard' })
+vim.keymap.set('n', '<Leader>cp', 'ggVG"_c<Esc>"+p', { desc = 'clear all the contents and pastes clipboard' })
 vim.keymap.set('i', '<Leader>kk', '<Esc>la', { desc = 'jump one place right' })
 vim.keymap.set('v', 'y', 'myy`y', { desc = 'remeber last position' })
 vim.keymap.set('v', 'J', ":m \'>+1<CR>gv=gv", { desc = 'move lines down' })

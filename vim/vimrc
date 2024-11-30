@@ -72,7 +72,8 @@
   nmap <leader>ii ciw'<C-r>"'jj
   vmap <leader>cc "*y
   nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
-  nmap <leader>cl ggVGc<Esc>
+  nmap <Leader>cl ggVGc
+  nmap <Leader>cp ggVG"_c<Esc>"+p
   nnoremap ff :FZF!<cr>
   nnoremap <leader>nn :NERDTree<cr>
   nnoremap <leader>rd :sort u<cr><esc>
