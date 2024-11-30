@@ -30,8 +30,9 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------
 # fzf 
 # -------------------------------------
-bindkey -s ^f "source ~/dotfiles/scripts/tmux-sessionizer\n"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey -s ^f 'fzf\n'
+bindkey -s ^n "source ~/dotfiles/scripts/tmux-sessionizer\n"
 
 # -------------------------------------
 # PATHS

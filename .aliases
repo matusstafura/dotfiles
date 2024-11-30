@@ -8,13 +8,14 @@ alias cor="composer require"
 alias cou="composer update"
 
 # "D" dotfiles
-alias drz="source ~/.zshrc"
-alias dvz="v ~/dotfiles/zsh/zshrc"
-alias dva="v ~/dotfiles/.aliases"
-alias dot="cd ~/dotfiles"
-alias nvo="nvim ~/dotfiles/nvim/lua/user/options.lua"
-alias nvk="nvim ~/dotfiles/nvim/lua/user/keymaps.lua"
-alias nvp="nvim ~/dotfiles/nvim/lua/user/plugins.lua"
+alias drz="source $HOME/.zshrc"
+alias dvz="v $HOME/dotfiles/zsh/zshrc"
+alias dva="v $HOME/dotfiles/.aliases"
+alias dot="cd $HOME/dotfiles"
+alias obs="cd $HOME/Obsidian/Tasks/"
+alias nvo="nvim $HOME/dotfiles/nvim/lua/user/options.lua"
+alias nvk="nvim $HOME/dotfiles/nvim/lua/user/keymaps.lua"
+alias nvp="nvim $HOME/dotfiles/nvim/lua/user/plugins.lua"
 
 # "K" kubectl
 alias kc="kubectl"
