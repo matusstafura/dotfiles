@@ -3,5 +3,5 @@ bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
 dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
 mkc() { mkdir "$1"; cd "$1"; }
 ide() { tmux split-window -v -p 20; }
-npo() { cp $HOME/Obsidian/Tasks/07\ Settings/07.01\ Templates/Blog\ Post.md $HOME/Obsidian/Tasks/04\ Projects/04.03\ Blog\ Posts/new.md; 
-        v $HOME/Obsidian/Tasks/04\ Projects/04.03\ Blog\ Posts/new.md }
+npo() { cp $HOME/Obsidian/Tasks/07\ Settings/07.01\ Templates/Blog\ Post.md $HOME/Obsidian/Tasks/04\ Projects/04.03\ Blog\ Posts/index.md; 
+        v $HOME/Obsidian/Tasks/04\ Projects/04.03\ Blog\ Posts/index.md }

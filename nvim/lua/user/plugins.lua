@@ -187,7 +187,7 @@ use({
 -- Copilot
 use({'github/copilot.vim', })
 -- lua
-vim.g.copilot_node_command = "~/.nvm/versions/node/v16.15.0/bin/node"
+vim.g.copilot_node_command = "~/.nvm/versions/node/v20.15.1/bin/node"
 
 use({
     'neovim/nvim-lspconfig',

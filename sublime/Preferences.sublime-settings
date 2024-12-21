@@ -26,6 +26,6 @@
 	"update_check": false,
 	"rulers": [120],
 	"color_scheme": "Catppuccin Latte.sublime-color-scheme",
-	"index_files": true,
+	"index_files": false,
 	"theme": "auto",
 }

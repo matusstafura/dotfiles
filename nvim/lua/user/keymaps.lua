@@ -72,7 +72,7 @@ vim.keymap.set('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', { desc = 'previe
 vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { desc = 'reset hunk' })
 -- [N]
 -- nvimtree
-vim.keymap.set('n', '<leader>n', ':NvimTreeFindFileToggle<CR>')
+-- vim.keymap.set('n', '<leader>n', ':NvimTreeFindFileToggle<CR>')
 -- [T]
 -- terminal
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })

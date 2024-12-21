@@ -1,4 +1,11 @@
 # -------------------------------------
+# nvm
+# -------------------------------------
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads nvm bash_completion
+
+# -------------------------------------
 # powerlevel10k
 # -------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -53,12 +60,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ctags=/usr/local/bin/ctags
 
-# -------------------------------------
-# nvm
-# -------------------------------------
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion 
 
 # Herd 
 export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
