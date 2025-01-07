@@ -183,17 +183,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
 
-assign [class="obsidian"] 1
-assign [class="Google-chrome"] 2
+# Custom Settings
+
+assign [class="Google-chrome"] 1
+assign [class="obsidian"] 2
 assign [class="org.wezfurlong.wezterm"] 3
 assign [class="^Sublime_text$"] 4
 assign [class="vlc"] 5
-exec --no-startup-id obsidian
+assign [class="transmission-gtk"] 6
+
 exec --no-startup-id google-chrome
+exec --no-startup-id obsidian
 exec --no-startup-id wezterm
 exec --no-startup-id subl
+exec --no-startup-id vlc
 

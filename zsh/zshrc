@@ -1,3 +1,5 @@
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # -------------------------------------
 # nvm
 # -------------------------------------
@@ -59,7 +61,6 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ctags=/usr/local/bin/ctags
-
 
 # Herd 
 export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH

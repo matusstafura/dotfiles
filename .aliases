@@ -1,5 +1,12 @@
 # safe only
 
+alias s="cd ~/Sites/"
+alias d="cd ~/Downloads/"
+
+alias yvid="yt-dlp -f best"
+alias yaud="yt-dlp --extract-audio -f best --audio-format m4a"
+alias ymp3="yt-dlp --extract-audio -f best --audio-format mp3"
+
 # "C" composer
 alias cod="composer dump-autoload"
 alias coi="composer install"
