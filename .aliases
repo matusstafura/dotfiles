@@ -1,7 +1,12 @@
-# safe only
-
-alias s="cd ~/Sites/"
-alias d="cd ~/Downloads/"
+# apps and languages
+alias d="cd $HOME/Downloads/"
+alias k="kubectl"
+alias m="minikube"
+alias o="cd $HOME/Obsidian/Legacy/"
+alias p="python3"
+alias r="ranger"
+alias s="cd $HOME/Sites/"
+alias v="nvim"
 
 alias yvid="yt-dlp -f best"
 alias yaud="yt-dlp --extract-audio -f best --audio-format m4a"
@@ -19,17 +24,9 @@ alias drz="source $HOME/.zshrc"
 alias dvz="v $HOME/dotfiles/zsh/zshrc"
 alias dva="v $HOME/dotfiles/.aliases"
 alias dot="cd $HOME/dotfiles"
-alias obs="cd $HOME/Obsidian/Tasks/"
 alias nvo="nvim $HOME/dotfiles/nvim/lua/user/options.lua"
 alias nvk="nvim $HOME/dotfiles/nvim/lua/user/keymaps.lua"
 alias nvp="nvim $HOME/dotfiles/nvim/lua/user/plugins.lua"
-
-# apps and languages
-alias k="kubectl"
-alias mk="minikube"
-alias p="python3"
-alias r="ranger"
-alias v="nvim"
 
 # other
 alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
