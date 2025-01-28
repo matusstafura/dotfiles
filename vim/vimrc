@@ -8,7 +8,7 @@
   Plug 'terryma/vim-multiple-cursors'
   Plug 'preservim/nerdtree'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'catppuccin/nvim', { 'as': 'latte' }
+  Plug 'catppuccin/vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'francoiscabrol/ranger.vim'
   call plug#end()
@@ -41,7 +41,7 @@
   let NERDTreeShowHidden=1
   let g:ranger_map_keys = 0
   let g:surround_indent = 0
-  colorscheme catppuccin-latte
+  colorscheme catppuccin_latte
   filetype plugin indent on
   syntax enable
   if (has('termguicolors'))
