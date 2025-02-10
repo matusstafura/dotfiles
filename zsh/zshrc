@@ -1,3 +1,8 @@
+# -------------------------------------
+# nvim
+# -------------------------------------
+export EDITOR=/usr/local/bin/nvim
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # -------------------------------------
@@ -15,11 +20,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# -------------------------------------
-# nvim
-# -------------------------------------
-export EDITOR=/usr/local/bin/nvim
 
 # -------------------------------------
 # load custom dotfiles
@@ -55,6 +55,7 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
 export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 

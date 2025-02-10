@@ -187,7 +187,12 @@ use({
 -- Copilot
 use({'github/copilot.vim', })
 -- lua
-vim.g.copilot_node_command = "~/.nvm/versions/node/v20.15.1/bin/node"
+
+local function getNodePath()
+    return os.execute("which node")
+end
+
+vim.g.copilot_node_command = getNodePath()
 
 use({
     'neovim/nvim-lspconfig',
