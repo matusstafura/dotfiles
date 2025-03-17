@@ -79,6 +79,7 @@ vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal togg
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tp', '<cmd>FloatermPrev<CR>', { desc = 'terminal prev' })
 vim.keymap.set('n', '<leader>rm', ':FloatermNew --position=right --width=0.5 --height=0.3 --autoclose=0 go run main.go<CR>')
+vim.keymap.set('n', '<leader>py', ':FloatermNew --autoclose=0 python3 %<CR>', { noremap = true, silent = true })
 -- testing
 vim.keymap.set('n', '<Leader>tf', ':TestFile<CR>', { desc = 'test file' })
 vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })

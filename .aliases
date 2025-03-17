@@ -8,6 +8,8 @@ alias r="ranger"
 alias s="cd $HOME/Sites/"
 alias v="nvim"
 
+alias cpp="g++ -std=c++17"
+
 alias yvid="yt-dlp -f best"
 alias yaud="yt-dlp --extract-audio -f best --audio-format m4a"
 alias ymp3="yt-dlp --extract-audio -f best --audio-format mp3"
