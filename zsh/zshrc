@@ -36,6 +36,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Don't save commands that start with a space
+setopt HIST_IGNORE_SPACE
+
+# Don't save failed commands
+setopt HIST_IGNORE_ERR
+
 # -------------------------------------
 # fzf 
 # -------------------------------------
@@ -47,12 +53,14 @@ bindkey -s ^n "source ~/dotfiles/scripts/tmux-sessionizer\n"
 # PATHS
 # -------------------------------------
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/php@8.1/bin:$PATH"
-export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+# export PATH="/usr/local/opt/php@8.1/bin:$PATH"
+# export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/python@3.11/bin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
@@ -65,6 +73,18 @@ ctags=/usr/local/bin/ctags
 
 # Herd 
 export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
-export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
 export HERD_PHP_81_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/81/"
+export HERD_PHP_82_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/82/"
+export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
 
+
+# Herd injected PHP binary.
+export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/85/"
