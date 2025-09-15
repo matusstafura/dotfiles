@@ -15,8 +15,8 @@ config.window_padding = {
 }
 
 if string.find(target_os, "darwin") then
-  config.font_size = 15.0
-  config.line_height = 1.4
+  config.font_size = 16.0
+  config.line_height = 1.5
 end
 
 return config

@@ -32,19 +32,6 @@ require('lspconfig').volar.setup({
   on_attach = on_attach,
 })
 
--- Rust
-require('lspconfig').rust_analyzer.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  cmd = {
-    "rustup",
-    "run",
-    "rust-analyzer",
-    "stable",
-  },
-  filetypes = { 'rust' },
-})
-
 -- Go
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*.go',

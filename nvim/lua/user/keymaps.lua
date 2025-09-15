@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>coe', '<cmd>Copilot enable<CR> <cmd>echo "copilot e
 vim.keymap.set('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], { desc = 'find files' })
 vim.keymap.set('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]], { desc = 'find all files' })
 vim.keymap.set('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { desc = 'find buffers' })
-vim.keymap.set('n', '<leader>fB', [[<cmd>Telescope file_browser<CR>]], { desc = 'find file browser' })
+vim.keymap.set('n', '<leader>fB', [[<cmd>lua require('telescope').extensions.file_browser.file_browser({ sort_by = 'modified'})<CR>]], { desc = 'file browser' })
 vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], { desc = 'find grep' })
 vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { desc = 'find history' })
 -- plenary

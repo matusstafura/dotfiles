@@ -36,6 +36,7 @@ alias ren="find . -type f -exec mv {} {}.$1 \;"
 alias del="find . -type f -name '*.$1' -delete"
 alias own="find . -type f ! -name '*.$1' -delete"
 alias ela="~/elasticsearch/bin/elasticsearch"
+alias nrd="npm run dev"
 
 # Laravel
 alias art="php artisan"
@@ -52,9 +53,10 @@ alias bcd="bin/magento cache:disable"
 alias ixs="bin/magento indexer:reindex"
 alias bco="bin/magento setup:di:compile"
 alias bpl="bin/magento setup:static-content:deploy"
-alias upg="bin/magento setup:upgrade"
+alias upg="php -d memory_limit=12G bin/magento setup:upgrade"
 alias bdd="bin/magento deploy:mode:set developer"
 alias bdp="bin/magento deploy:mode:set production"
+alias dep="php -d memory_limit=12G bin/magento setup:static-content:deploy -f en_US sk_SK"
 
 # "G" git aliases
 alias gad="git add"
