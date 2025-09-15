@@ -12,6 +12,10 @@ ln -s $DOTFILES/i3 $HOME/.config/i3
 rm -rf $HOME/.config/polybar
 ln -s $DOTFILES/polybar $HOME/.config/polybar
 
+# rofi
+rm -rf $HOME/.config/rofi
+ln -s $DOTFILES/rofi $HOME/.config/rofi
+
 # sublime
 rm -rf $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 mkdir -p $HOME/.config/sublime-text-3/Packages/User
