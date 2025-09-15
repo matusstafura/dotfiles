@@ -1,0 +1,11 @@
+[Unit]
+Description=Update dotfiles on login
+
+[Service]
+Type=oneshot
+ExecStart=%h/dotfiles/bin/dotfiles-update.sh
+WorkingDirectory=%h/dotfiles
+
+[Install]
+WantedBy=default.target
+
