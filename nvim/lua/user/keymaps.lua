@@ -59,6 +59,7 @@ vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfil
 -- git
 vim.keymap.set('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { desc = 'git commits' })
 vim.keymap.set('n', '<leader>ga', '<cmd>Git add %<CR>', { desc = 'git add' })
+vim.keymap.set('n', '<leader>gd', '<cmd>Gvdiffsplit HEAD~1<CR>', { desc = 'git diff Head~1' })
 vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = 'git status' })
 vim.keymap.set('n', '<leader>gf', '<cmd>Git diff<CR>', { desc = 'git diff' })
 vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = 'git commit' })

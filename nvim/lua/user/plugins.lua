@@ -36,11 +36,11 @@ use('wbthomason/packer.nvim') -- Let packer manage itself
 use('tpope/vim-commentary')
 
 -- surrounds 
--- examples cs"' cs'<p> cs'<q> ds" ds' ds<p> ds<q>
+-- examples cs"' cs'<p> cs'<q> ds" ds' ds<p> ds<q> vS"
 use('tpope/vim-surround')
 
 -- unix shell commands
--- examples: :Remove :Delete :Move :Rename :Chmod :Mkdir :SudoWrite :SudoEdit
+-- examples: :Remove :Delete :Move :Rename :Chmod :Mkdir :SudoWrite :SudoEdit :Touch :Cfind :Lfind :Clocate :Llocate
 use('tpope/vim-eunuch')
 
 -- better indenting
