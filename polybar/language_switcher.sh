@@ -1,19 +1,14 @@
 #!/bin/bash
 
-# This script echos and switches the system languages in Ubuntu
-# for polybar status bar.
-
-function get_current_language() {
-    local lang=$(setxkbmap -query | grep layout | awk '{print $2}')
-    echo "$lang"
+get_current_language() {
+    setxkbmap -query | awk '/layout/{print $2}'
 }
 
-function get_list_languages() {
-    local lang_list=$(setxkbmap -query | grep layout | awk '{print $2}')
-    return "$lang_list"
+get_list_languages() {
+    return lang_list=$(setxkbmap -query | grep layout | awk '{print $2}')
 }
 
-function switch_language() {
+switch_language() {
     local lang_list=$(get_list_languages | tr ',' ' ')
     for lang in $lang_list; do
         if [[ "$lang" != "$current_lang" ]]; then
