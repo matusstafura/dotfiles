@@ -40,7 +40,3 @@ ln -s $DOTFILES/vim/vimrc $HOME/.vimrc
 # p10k theme
 rm $HOME/.p10k.zsh
 ln -s $DOTFILES/zsh/p10k.zsh $HOME/.p10k.zsh
-
-#### SYSTEMD SERVICES 
-mkdir -p $HOME/.config/systemd/user
-ln -sf $DOTFILES/systemd/user/dotfiles-update.service $HOME/.config/systemd/user/dotfiles-update.service
