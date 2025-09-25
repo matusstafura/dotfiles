@@ -1,3 +1,4 @@
 # my conf
 .mycnf
 .DS_Store
+nvim/env.lua
