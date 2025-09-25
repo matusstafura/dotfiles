@@ -7,6 +7,7 @@ config.font = wezterm.font('JetBrains Mono')
 config.font_size = 14.0
 config.line_height = 1.3
 config.audible_bell = "Disabled"
+config.enable_tab_bar = false
 config.window_padding = {
   left = 0,
   right = 0,
