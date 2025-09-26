@@ -1,4 +1,22 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Explicitly ensure code action capabilities
+capabilities.textDocument.codeAction = {
+  dynamicRegistration = false,
+  codeActionLiteralSupport = {
+    codeActionKind = {
+      valueSet = {
+        "",
+        "quickfix", 
+        "refactor",
+        "refactor.extract",
+        "refactor.inline", 
+        "refactor.rewrite",
+        "source",
+        "source.organizeImports",
+      },
+    },
+  },
+}
 
 require('mason').setup()
 require('mason-lspconfig').setup({ automatic_installation = true })
@@ -8,6 +26,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
   vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = bufnr })
   vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = bufnr })
+  vim.keymap.set('n', '<leader>gu', vim.lsp.buf.code_action, { buffer = bufnr })
   vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = bufnr })
   vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = bufnr })
   vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = bufnr })
@@ -18,9 +37,8 @@ end
 -- PHP (Intelephense)
 vim.lsp.config("intelephense", {
   capabilities = capabilities,
-  filetypes = { "php" },
   on_attach = on_attach,
-  initializationOptions = {
+  init_options = {
     licenceKey = vim.env.INTELEPHENSE_LICENSE
   },
   settings = {
@@ -28,8 +46,15 @@ vim.lsp.config("intelephense", {
       diagnostics = {
         undefinedVariables = false, -- disables globally
       },
+      environment = {
+        includePaths = { "vendor" } -- Adjust this path to your PHP libraries
+      },
       files = {
         maxSize = 5000000, -- 5MB
+      },
+      completion = {
+        fullyQualifyGlobalConstantsAndFunctions = false,
+        insertUseDeclaration = true   --  👈 this is the key for auto-import
       },
     },
   },
@@ -37,13 +62,6 @@ vim.lsp.config("intelephense", {
 
 vim.lsp.config('GitHub Copilot', {
   capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- JavaScript / Vue (Volar)
-vim.lsp.config("volar", {
-  capabilities = capabilities,
-  filetypes = { "vue", "javascript", "javascriptreact", "typescript", "typescriptreact" },
   on_attach = on_attach,
 })
 

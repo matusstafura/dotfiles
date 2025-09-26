@@ -198,7 +198,16 @@ use({
     'neovim/nvim-lspconfig',
     requires = {
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim'
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',       -- LSP client
+        'nvim-lua/plenary.nvim',
+        'nvimtools/none-ls.nvim',      -- optional for formatting
+        'hrsh7th/nvim-cmp',            -- autocompletion
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'L3MON4D3/LuaSnip'
     },
 
     config = function()
