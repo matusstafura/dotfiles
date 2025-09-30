@@ -92,6 +92,18 @@ vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with b
 -- [X]
 -- buffer
 vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>', { desc = 'buffer delete' })
+vim.keymap.set("n", "<leader>cb", function()
+  local current = vim.fn.bufnr('%')
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if buf ~= current
+      and vim.api.nvim_buf_is_loaded(buf)
+      and vim.fn.buflisted(buf) == 1
+      and not vim.api.nvim_buf_get_option(buf, 'modified') then
+        vim.api.nvim_buf_delete(buf, {})
+    end
+  end
+end, { desc = "Close all saved buffers except current one" })
 
 vim.keymap.set('n', '<leader>fx', ':silent !./vendor/bin/pint %<CR>', { desc = 'pint' })
 vim.keymap.set('t', '<leader>mm', '<C-\\><C-n><CR>', { desc = 'terminal toggle' })
+
