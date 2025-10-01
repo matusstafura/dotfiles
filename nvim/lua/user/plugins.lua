@@ -228,21 +228,23 @@ use({
 })
 
 -- Highlight windows
--- highlight inactive windows when entering
+-- Define two distinct highlight groups
+vim.api.nvim_set_hl(0, 'ActiveWindow', { bg = '#f5f5f7', fg = '#7c7f93' })
+vim.api.nvim_set_hl(0, 'InactiveWindow', { bg = '#eff1f5', fg = '#4c4f69' })
+
+-- Make active window use custom colors
 vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, {
   callback = function()
-    vim.wo.winhighlight = 'Normal:Normal,NormalNC:NormalDim'
+    vim.wo.winhighlight = 'Normal:ActiveWindow'
   end,
 })
 
--- highlight inactive windows when leaving
+-- Make inactive windows use different colors
 vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, {
   callback = function()
-    vim.wo.winhighlight = 'Normal:NormalDim,NormalNC:NormalDim'
+    vim.wo.winhighlight = 'Normal:InactiveWindow'
   end,
 })
-
-vim.api.nvim_set_hl(0, 'NormalDim', { bg = '#f5f5f7', fg = '#7c7f93' })
 -- End Highlight windows
 
 P = function(thing)
