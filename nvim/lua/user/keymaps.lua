@@ -6,8 +6,11 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>', { desc = 'quit' })
+vim.keymap.set('n', '<Leader>qa', '<Esc>:q<CR>', { desc = 'quit all' })
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>', { desc = 'save and quit' })
 vim.keymap.set('n', '<Leader>s', '<Esc>:w!<CR>', { desc = 'save' })
+vim.keymap.set('n', '<Leader>ms', '<Esc>::mksession! ~/nvim-session.vim<CR>', { desc = 'save session' })
+vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- kj to <Esc>
 vim.keymap.set('i', 'kj', '<Esc>')
 -- ************************************************************************************

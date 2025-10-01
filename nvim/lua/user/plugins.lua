@@ -119,6 +119,7 @@ use({
   end,
 })
 
+-- statusline at the bottom
 use({
     'nvim-lualine/lualine.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -127,6 +128,7 @@ use({
     end,
 })
 
+-- syntax highlighting
 use({
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate',
@@ -140,6 +142,7 @@ use({
   end,
 })
 
+-- floating terminal
 use({
     'voldikss/vim-floaterm',
     config = function() 
@@ -147,6 +150,7 @@ use({
     end,
 })
 
+-- Git signs in the gutter
 use({
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -154,19 +158,12 @@ use({
     end,
 })
 
+-- Tab like interface for buffers
 use({
     'akinsho/nvim-bufferline.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
         require('user.plugins.bufferline')
-    end,
-})
-
-use({
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-        require('user/plugins/nvim-tree')
     end,
 })
 
@@ -230,14 +227,23 @@ use({
     end,
 })
 
--- dashboard-nvim
--- use {
---   'glepnir/dashboard-nvim',
---   config = function()
---       require('user.plugins.dashboard')
---   end,
---   requires = {'nvim-tree/nvim-web-devicons'}
--- }
+-- Highlight windows
+-- highlight inactive windows when entering
+vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, {
+  callback = function()
+    vim.wo.winhighlight = 'Normal:Normal,NormalNC:NormalDim'
+  end,
+})
+
+-- highlight inactive windows when leaving
+vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, {
+  callback = function()
+    vim.wo.winhighlight = 'Normal:NormalDim,NormalNC:NormalDim'
+  end,
+})
+
+vim.api.nvim_set_hl(0, 'NormalDim', { bg = '#f5f5f7', fg = '#7c7f93' })
+-- End Highlight windows
 
 P = function(thing)
   print(vim.inspect(thing))
