@@ -6,6 +6,7 @@ alias o="cd $HOME/Obsidian/Legacy/"
 alias p="python3"
 alias r="ranger"
 alias s="cd $HOME/Sites/"
+alias t="tmux"
 alias v="nvim"
 
 alias cpp="g++ -std=c++17"
