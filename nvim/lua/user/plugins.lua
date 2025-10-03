@@ -227,6 +227,30 @@ use({
     end,
 })
 
+-- obsidian
+use({
+  'obsidian-nvim/obsidian.nvim',
+  config = function()
+    require("obsidian").setup({
+      workspaces = {
+        {
+          path = "/home/matus/Obsidian/Legacy",
+        },
+      },
+      legacy_commands = false,
+    })
+  end,
+})
+-- Enable conceal for markdown files in obsidian
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+    vim.opt_local.concealcursor = "nc"
+  end,
+})
+-- obsidian end
+
 -- Highlight windows
 -- Define two distinct highlight groups
 vim.api.nvim_set_hl(0, 'ActiveWindow', { bg = '#f5f5f7', fg = '#7c7f93' })
