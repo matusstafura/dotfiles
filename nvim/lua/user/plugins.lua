@@ -241,14 +241,6 @@ use({
     })
   end,
 })
--- Enable conceal for markdown files in obsidian
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.opt_local.conceallevel = 2
-    vim.opt_local.concealcursor = "nc"
-  end,
-})
 -- obsidian end
 
 -- Highlight windows
@@ -270,6 +262,14 @@ vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, {
   end,
 })
 -- End Highlight windows
+--
+
+local html_cleaner = require('user.scripts.html_cleaner')
+vim.api.nvim_create_user_command(
+  'CleanHtml',
+  function() html_cleaner.clean_html_buffer() end,
+  {}
+)
 
 P = function(thing)
   print(vim.inspect(thing))
