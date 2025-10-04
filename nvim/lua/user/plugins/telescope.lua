@@ -24,7 +24,11 @@ telescope.setup({
         ['<esc>'] = actions.close,
         ['<C-Down>'] = actions.cycle_history_next,
         ['<C-Up>'] = actions.cycle_history_prev,
+        ["<C-d>"] = actions.delete_buffer, -- helpful if we want to close a buffer from telescope
       },
+      n = {
+        ["<C-d>"] = actions.delete_buffer,
+      }
     },
     file_ignore_patterns = { '.git/' },
   },
