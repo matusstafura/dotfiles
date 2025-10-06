@@ -9,8 +9,6 @@ vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>', { desc = 'quit' })
 vim.keymap.set('n', '<Leader>a', '<Esc>:qa<CR>', { desc = 'quit all' })
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>', { desc = 'save and quit' })
 vim.keymap.set('n', '<Leader>s', '<Esc>:w!<CR>', { desc = 'save' })
-vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { desc = 'save session' })
-vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- kj to <Esc>
 vim.keymap.set('i', 'kj', '<Esc>')
 -- ************************************************************************************
@@ -56,8 +54,7 @@ vim.keymap.set('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').buffer
 vim.keymap.set('n', '<leader>fB', [[<cmd>lua require('telescope').extensions.file_browser.file_browser({ sort_by = 'modified'})<CR>]], { desc = 'file browser' })
 vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], { desc = 'find grep' })
 vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { desc = 'find history' })
--- plenary
--- vim.keymap.set('n', '<Leader>tf', '<Plug>PlenaryTestFile')
+vim.keymap.set('n', '<leader>fk', [[<cmd>lua require('telescope.builtin').keymaps()<CR>]], { desc = 'find keymaps' })
 -- [G]
 -- git
 vim.keymap.set('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { desc = 'git commits' })
@@ -74,24 +71,22 @@ vim.keymap.set('n', '<leader>hs', ':Gitsigns stage_hunk<CR>', { desc = 'stage hu
 vim.keymap.set('n', '<leader>hu', ':Gitsigns undo_stage_hunk<CR>', { desc = 'undo stage hunk' })
 vim.keymap.set('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', { desc = 'preview hunk' })
 vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { desc = 'reset hunk' })
--- [N]
--- nvimtree
--- vim.keymap.set('n', '<leader>n', ':NvimTreeFindFileToggle<CR>')
+-- [M]
+vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { desc = 'save session' })
+vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- [T]
 -- terminal
+vim.keymap.set('t', '<leader>te', '<C-\\><C-n><CR>', { desc = 'terminal toggle' })
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
-vim.keymap.set('t', '<leader>tp', '<cmd>FloatermPrev<CR>', { desc = 'terminal prev' })
-vim.keymap.set('n', '<leader>rm', ':FloatermNew --position=right --width=0.5 --height=0.3 --autoclose=0 go run main.go<CR>')
-vim.keymap.set('n', '<leader>py', ':FloatermNew --autoclose=0 python3 %<CR>', { noremap = true, silent = true })
 -- testing
+vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with bail' })
+vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', { desc = 'test coverage' })
 vim.keymap.set('n', '<Leader>tf', ':TestFile<CR>', { desc = 'test file' })
 vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })
 vim.keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { desc = 'test nearest' })
-vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', { desc = 'test coverage' })
 vim.keymap.set('n', '<Leader>ts', ':TestSuite<CR>', { desc = 'test suite' })
 vim.keymap.set('n', '<Leader>tv', ':TestVisit<CR>', { desc = 'test visit' })
-vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with bail' })
 -- [X]
 -- buffer
 vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>', { desc = 'buffer delete' })
@@ -108,5 +103,13 @@ vim.keymap.set("n", "<leader>cb", function()
 end, { desc = "Close all saved buffers except current one" })
 
 vim.keymap.set('n', '<leader>fx', ':silent !./vendor/bin/pint %<CR>', { desc = 'pint' })
-vim.keymap.set('t', '<leader>mm', '<C-\\><C-n><CR>', { desc = 'terminal toggle' })
 
+-- RETHINK
+-- only for go projects, different keymap
+-- vim.keymap.set('n', '<leader>rm', ':FloatermNew --position=right --width=0.5 --height=0.3 --autoclose=0 go run main.go<CR>')
+
+-- only if python file
+-- vim.keymap.set('n', '<leader>py', ':FloatermNew --autoclose=0 python3 %<CR>', { noremap = true, silent = true })
+
+-- only in linux
+-- vim.keymap.set('t', '<leader>mn', '[[<cmd>lua require('telescope.builtin').man_pages()<CR>]]', { desc = 'man pages' })
