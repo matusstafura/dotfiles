@@ -55,6 +55,7 @@ vim.keymap.set('n', '<leader>fB', [[<cmd>lua require('telescope').extensions.fil
 vim.keymap.set('n', '<leader>fg', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], { desc = 'find grep' })
 vim.keymap.set('n', '<leader>fh', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { desc = 'find history' })
 vim.keymap.set('n', '<leader>fk', [[<cmd>lua require('telescope.builtin').keymaps()<CR>]], { desc = 'find keymaps' })
+vim.keymap.set('n', '<leader>fs', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { desc = 'find string under cursor' })
 -- [G]
 -- git
 vim.keymap.set('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { desc = 'git commits' })
