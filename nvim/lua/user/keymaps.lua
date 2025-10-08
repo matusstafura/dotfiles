@@ -4,13 +4,22 @@
 -- remap backslash to leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- kj to <Esc>
+vim.keymap.set('i', 'kj', '<Esc>')
 -- save and quit
 vim.keymap.set('n', '<Leader>q', '<Esc>:q<CR>', { desc = 'quit' })
 vim.keymap.set('n', '<Leader>a', '<Esc>:qa<CR>', { desc = 'quit all' })
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>', { desc = 'save and quit' })
 vim.keymap.set('n', '<Leader>s', '<Esc>:w!<CR>', { desc = 'save' })
--- kj to <Esc>
-vim.keymap.set('i', 'kj', '<Esc>')
+-- yanking without copying to clipboard
+vim.keymap.set('n', 'dw', 'vb"_d', { desc = 'delete word backwards' })
+vim.keymap.set("n", "x", '"_x', { desc = 'delete without yank' })
+vim.keymap.set("n", "<Leader>p", '"0p', { desc = 'paste from clipboard' })
+vim.keymap.set("n", "<Leader>d", '"_d', { desc = 'delete without yank' })
+vim.keymap.set('n' , '<Leader>yy', 'gg"*yG', { desc = 'copy all the contents' })
+vim.keymap.set('n', '<Leader>cl', 'ggVGc', { desc = 'clear all the contents and keeps clipboard' })
+vim.keymap.set('n', '<Leader>cp', 'ggVG"_c<Esc>"+p', { desc = 'clear all the contents and pastes clipboard' })
+vim.keymap.set('i', '<Leader>kk', '<Esc>la', { desc = 'jump one place right' })
 -- ************************************************************************************
 -- WINDOWS
 -- ************************************************************************************
@@ -31,16 +40,11 @@ vim.keymap.set('i', ';;', '<Esc>A;', { desc = 'add semicolon at the end of the l
 -- ************************************************************************************
 -- MACROS
 -- ************************************************************************************
-vim.keymap.set('n' , '<Leader>yy', 'gg"*yG', { desc = 'copy all the contents' })
-vim.keymap.set('n', '<Leader>cl', 'ggVGc', { desc = 'clear all the contents and keeps clipboard' })
-vim.keymap.set('n', '<Leader>cp', 'ggVG"_c<Esc>"+p', { desc = 'clear all the contents and pastes clipboard' })
-vim.keymap.set('i', '<Leader>kk', '<Esc>la', { desc = 'jump one place right' })
-vim.keymap.set('v', 'y', 'myy`y', { desc = 'remeber last position' })
+vim.keymap.set('v', 'y', 'myy`y', { desc = 'yank and keep cursor position' })
 vim.keymap.set('v', 'J', ":m \'>+1<CR>gv=gv", { desc = 'move lines down' })
 vim.keymap.set('v', 'K', ":m \'<-2<CR>gv=gv", { desc = 'move lines up' })
-vim.keymap.set('x', '<Leader>p', "\"_dP", { desc = 'delete and rewrite' })
 -- ************************************************************************************
--- KEYMAPS
+-- PLUGIN KEYMAPS
 -- ************************************************************************************
 -- [C]
 -- copilot
@@ -91,7 +95,7 @@ vim.keymap.set('n', '<Leader>tv', ':TestVisit<CR>', { desc = 'test visit' })
 -- [X]
 -- buffer
 vim.keymap.set('n', '<leader>xx', ':Bdelete<CR>', { desc = 'buffer delete' })
-vim.keymap.set("n", "<leader>cb", function()
+vim.keymap.set("n", "<leader>xb", function()
   local current = vim.fn.bufnr('%')
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
     if buf ~= current
@@ -102,8 +106,6 @@ vim.keymap.set("n", "<leader>cb", function()
     end
   end
 end, { desc = "Close all saved buffers except current one" })
-
-vim.keymap.set('n', '<leader>fx', ':silent !./vendor/bin/pint %<CR>', { desc = 'pint' })
 
 -- RETHINK
 -- only for go projects, different keymap
