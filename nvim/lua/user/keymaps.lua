@@ -64,7 +64,7 @@ vim.keymap.set('n', '<leader>fs', [[<cmd>lua require('telescope.builtin').grep_s
 vim.keymap.set('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { desc = 'git commits' })
 vim.keymap.set('n', '<leader>ga', '<cmd>Git add %<CR>', { desc = 'git add' })
 vim.keymap.set('n', '<leader>gd', '<cmd>Gvdiffsplit HEAD~1<CR>', { desc = 'git diff Head~1' })
-vim.keymap.set('n', '<leader>gg', '<cmd>Git<CR>', { desc = 'git status' })
+vim.keymap.set('n', '<leader>gg', '<cmd>vertical Git<CR>', { desc = 'git status' })
 vim.keymap.set('n', '<leader>gf', '<cmd>Git diff<CR>', { desc = 'git diff' })
 vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = 'git commit' })
 vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = 'git push' })
@@ -80,7 +80,7 @@ vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { d
 vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- [T]
 -- terminal
-vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
+vim.keymap.set('n', '<leader>tt', ':FloatermToggle main<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
 -- testing
 vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with bail' })
