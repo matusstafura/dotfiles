@@ -12,7 +12,6 @@ vim.keymap.set('n', '<Leader>a', '<Esc>:qa<CR>', { desc = 'quit all' })
 vim.keymap.set('n', '<Leader>z', '<Esc>:wq<CR>', { desc = 'save and quit' })
 vim.keymap.set('n', '<Leader>s', '<Esc>:w!<CR>', { desc = 'save' })
 -- yanking without copying to clipboard
-vim.keymap.set('n', 'dw', 'vb"_d', { desc = 'delete word backwards' })
 vim.keymap.set("n", "x", '"_x', { desc = 'delete without yank' })
 vim.keymap.set("n", "<Leader>p", '"0p', { desc = 'paste from clipboard' })
 vim.keymap.set("n", "<Leader>d", '"_d', { desc = 'delete without yank' })
@@ -81,7 +80,6 @@ vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { d
 vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- [T]
 -- terminal
-vim.keymap.set('t', '<leader>te', '<C-\\><C-n><CR>', { desc = 'terminal toggle' })
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
 -- testing
