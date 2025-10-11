@@ -36,6 +36,8 @@ telescope.setup({
     find_files = {
       hidden = true,
       width = 0.2,
+      -- no jpeg
+      file_ignore_patterns = { '%.jpg', '%.jpeg', '%.png', 'node_modules/', '.git/' },
     },
     buffers = {
       previewer = false,
