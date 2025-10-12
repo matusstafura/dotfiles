@@ -80,15 +80,14 @@ vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { d
 vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
 -- [T]
 -- terminal
-vim.keymap.set('n', '<leader>tt', ':FloatermToggle main<CR>', { desc = 'terminal toggle' })
+vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
 -- testing
-vim.keymap.set('n', '<Leader>tb', ':TestSuite --bail<CR>', { desc = 'test with bail' })
 vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', { desc = 'test coverage' })
 vim.keymap.set('n', '<Leader>tf', ':TestFile<CR>', { desc = 'test file' })
 vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })
 vim.keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { desc = 'test nearest' })
-vim.keymap.set('n', '<Leader>ts', ':TestSuite<CR>', { desc = 'test suite' })
+vim.keymap.set('n', '<Leader>ts', ':TestSuite --parallel<CR>', { desc = 'test suite' })
 vim.keymap.set('n', '<Leader>tv', ':TestVisit<CR>', { desc = 'test visit' })
 -- [X]
 -- buffer

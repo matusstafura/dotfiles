@@ -1,5 +1,5 @@
 vim.cmd([[
-  let test#php#pest#executable = 'vendor/bin/pest --parallel --bail'
+  let test#php#pest#executable = 'vendor/bin/pest --bail'
 
   function! FloatermStrategy(cmd)
     execute 'silent FloatermKill scratch'

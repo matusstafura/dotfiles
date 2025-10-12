@@ -23,16 +23,25 @@ require('mason-lspconfig').setup({ automatic_installation = true })
 
 -- LSP keymaps 
 local on_attach = function(client, bufnr)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>gu', vim.lsp.buf.code_action, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { buffer = bufnr })
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
-  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { buffer = bufnr })
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Hover', buffer = bufnr })
+  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = 'LSP Go to Implementation', buffer = bufnr })
+  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'LSP Go to Definition', buffer = bufnr })
+  vim.keymap.set('n', '<leader>gu', vim.lsp.buf.code_action, { desc = 'LSP Code Action', buffer = bufnr })
+  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { desc = 'LSP Type Definition', buffer = bufnr })
+  vim.keymap.set('n', '<leader>ee', vim.diagnostic.goto_next, { desc = 'LSP Next Diagnostic', buffer = bufnr })
+  vim.keymap.set('n', '<leader>oe', "<cmd>Telescope diagnostics<cr>", { desc = 'LSP List Diagnostics', buffer = bufnr })
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'LSP Rename', buffer = bufnr })
+  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = 'LSP References', buffer = bufnr })
 end
+
+vim.diagnostic.config({
+  float = {
+    border = 'rounded',
+    max_width = 50,  -- adjust width
+    wrap = true,     -- enable text wrapping
+    focusable = false,
+  },
+})
 
 -- PHP (Intelephense)
 vim.lsp.config("intelephense", {
