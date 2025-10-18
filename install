@@ -40,3 +40,6 @@ ln -s $DOTFILES/vim/vimrc $HOME/.vimrc
 # p10k theme
 rm $HOME/.p10k.zsh
 ln -s $DOTFILES/zsh/p10k.zsh $HOME/.p10k.zsh
+
+# git templates
+ln -sf ~/dotfiles/git-templates ~/.git-templates

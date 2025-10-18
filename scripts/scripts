@@ -3,3 +3,29 @@ bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
 dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
 mkc() { mkdir "$1"; cd "$1"; }
 ide() { tmux split-window -v -p 20; }
+gfr() {
+  local project_name=$(basename "$PWD")
+  local year=$(date +%Y)
+  
+  # Copy and process LICENSE
+  sed "s/{YEAR}/$year/g" ~/.git-templates/LICENSE > LICENSE
+  
+  # Copy and process README
+  sed "s/{PROJECT_NAME}/$project_name/g" ~/.git-templates/README.md > README.md
+  
+  # Copy and process CONTRIBUTING
+  sed "s/{PROJECT_NAME}/$project_name/g" ~/.git-templates/CONTRIBUTING.md > CONTRIBUTING.md
+  
+  # Copy .github directory
+  mkdir -p .github
+  cp ~/.git-templates/.github/FUNDING.yml .github/
+  
+  # Initialize git and commit
+  git init && \
+  git add . && \
+  git commit -m 'first init' && \
+  git config user.name matusstafura && \
+  git config user.email kobe21@gmail.com
+  
+  echo "✨ Project '$project_name' initialized with LICENSE, README, CONTRIBUTING, and FUNDING!"
+}
