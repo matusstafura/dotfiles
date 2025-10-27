@@ -39,9 +39,6 @@ source $ZSH/oh-my-zsh.sh
 # Don't save commands that start with a space
 setopt HIST_IGNORE_SPACE
 
-# Don't record the history command itself
-setopt HIST_NO_STORE
-
 # -------------------------------------
 # fzf 
 # -------------------------------------
