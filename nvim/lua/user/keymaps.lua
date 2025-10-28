@@ -83,7 +83,24 @@ vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc 
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
 vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'terminal toggle' })
 -- testing
-vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', { desc = 'test coverage' })
+-- PHP coverage (only in PHP files)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'php',
+  callback = function()
+    vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', 
+      { buffer = true, desc = 'test coverage' })
+  end
+})
+
+-- Go coverage (only in Go files)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function()
+    vim.keymap.set('n', '<Leader>tc', ':!go test -cover ./...<CR>',
+      { buffer = true, desc = 'toggle coverage' })
+  end
+})
+
 vim.keymap.set('n', '<Leader>tf', ':TestFile<CR>', { desc = 'test file' })
 vim.keymap.set('n', '<Leader>tl', ':TestLast<CR>', { desc = 'test last' })
 vim.keymap.set('n', '<Leader>tn', ':TestNearest<CR>', { desc = 'test nearest' })
