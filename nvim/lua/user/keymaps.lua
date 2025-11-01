@@ -78,6 +78,9 @@ vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { desc = 'reset hu
 -- [M]
 vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { desc = 'save session' })
 vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
+-- [P]
+-- python run current file
+vim.keymap.set('n', '<leader>py', ':FloatermNew --autoclose=0 python3 %<CR>', { desc = 'run python file' })
 -- [T]
 -- terminal
 vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>', { desc = 'terminal toggle' })
@@ -87,7 +90,7 @@ vim.keymap.set('t', '<leader>tt', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'te
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'php',
   callback = function()
-    vim.keymap.set('n', '<Leader>tc', ':TestSuite --coverage-html coverage<CR>', 
+    vim.keymap.set('n', '<Leader>tc', ':TestSuite --parallel --coverage-html coverage<CR>', 
       { buffer = true, desc = 'test coverage' })
   end
 })
@@ -98,6 +101,9 @@ vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     vim.keymap.set('n', '<Leader>tc', ':!go test -cover ./...<CR>',
       { buffer = true, desc = 'toggle coverage' })
+    -- vim.keymap.set('n', '<Leader>tb', ':!go test ./cmd -bench=. -benchmem<CR>',
+    vim.keymap.set('n', '<Leader>tb', ':TestFile --bench=. -benchmem<CR>',
+      { buffer = true, desc = 'test benchmarks' })
   end
 })
 
