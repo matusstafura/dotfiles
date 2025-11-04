@@ -183,7 +183,15 @@ use({
 
 -- Copilot
 use { "github/copilot.vim" }
--- lua
+-- Disable copilot for leetcode files
+vim.api.nvim_create_autocmd("BufEnter", {
+callback = function()
+  local filepath = vim.fn.expand("%:p")
+  if filepath:find(vim.fn.expand("~/Sites/leetcode"), 1, true) then
+    vim.b.copilot_enabled = false
+  end
+end,
+})
 
 -- local function getNodePath()
 --     return os.execute("which node")
