@@ -183,14 +183,15 @@ use({
 
 -- Copilot
 use { "github/copilot.vim" }
--- Disable copilot for leetcode files
-vim.api.nvim_create_autocmd("BufEnter", {
-callback = function()
-  local filepath = vim.fn.expand("%:p")
-  if filepath:find(vim.fn.expand("~/Sites/leetcode"), 1, true) then
-    vim.b.copilot_enabled = false
-  end
-end,
+-- Disable copilot for leetcode files by default
+vim.api.nvim_create_autocmd({"BufReadPost"}, {
+  callback = function()
+    local filepath = vim.fn.expand("%:p")
+    if filepath:find(vim.fn.expand("~/Sites/leetcode"), 1, true) and not vim.b.copilot_disabled_once then
+      vim.b.copilot_disabled_once = true
+      vim.cmd("Copilot disable")
+    end
+  end,
 })
 
 -- local function getNodePath()
@@ -278,6 +279,8 @@ vim.api.nvim_create_user_command(
   function() html_cleaner.clean_html_buffer() end,
   {}
 )
+
+require('coolsnippets')
 
 P = function(thing)
   print(vim.inspect(thing))
