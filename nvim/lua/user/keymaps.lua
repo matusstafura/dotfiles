@@ -75,6 +75,8 @@ vim.keymap.set('n', '<leader>hs', ':Gitsigns stage_hunk<CR>', { desc = 'stage hu
 vim.keymap.set('n', '<leader>hu', ':Gitsigns undo_stage_hunk<CR>', { desc = 'undo stage hunk' })
 vim.keymap.set('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', { desc = 'preview hunk' })
 vim.keymap.set('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { desc = 'reset hunk' })
+-- golang
+vim.keymap.set('n', '<leader>go', ':!go run .<CR>', { desc = 'go run' })
 -- [M]
 vim.keymap.set('n', '<Leader>ms', '<Esc>:mksession! ~/nvim-session.vim<CR>', { desc = 'save session' })
 vim.keymap.set('n', '<Leader>ml', '<Esc>:source ~/nvim-session.vim<CR>', { desc = 'load session' })
