@@ -237,19 +237,19 @@ use({
 })
 
 -- obsidian
-use({
-  'obsidian-nvim/obsidian.nvim',
-  config = function()
-    require("obsidian").setup({
-      workspaces = {
-        {
-          path = "/home/matus/Obsidian/Legacy",
-        },
-      },
-      legacy_commands = false,
-    })
-  end,
-})
+-- use({
+--   'obsidian-nvim/obsidian.nvim',
+--   config = function()
+--     require("obsidian").setup({
+--       workspaces = {
+--         {
+--           path = "/home/matus/Obsidian/Legacy",
+--         },
+--       },
+--       legacy_commands = false,
+--     })
+--   end,
+-- })
 -- obsidian end
 
 -- Highlight windows
@@ -280,7 +280,7 @@ vim.api.nvim_create_user_command(
   {}
 )
 
-require('coolsnippets')
+-- require('coolsnippets')
 
 P = function(thing)
   print(vim.inspect(thing))
