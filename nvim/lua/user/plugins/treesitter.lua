@@ -2,6 +2,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "php",
     "go",
+    "python",
   },
   textobjects = {
     select = {

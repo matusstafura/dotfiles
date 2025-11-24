@@ -50,37 +50,123 @@
 " ************************************************************************************
 " KEYMAPS
 " ************************************************************************************
-  nnoremap <SPACE> <Nop>
-  let mapleader=" "
-  nnoremap <leader>q :q!<cr>
-  nnoremap <leader>z :wq<cr>
-  nnoremap <leader>s :w!<cr>
-  inoremap kj <Esc>
-  nmap <silent> <leader>t :TestNearest<CR>
-" Keybindings: Split windows & jump 
-  nmap sd :vsplit<cr>
-  nmap sx :split<cr>
-  nmap sh <C-w>h
-  nmap sj <C-w>j
-  nmap sk <C-w>k
-  nmap sl <C-w>l
-  nnoremap <C-n> <cmd>cnext<CR>
-  nnoremap <C-p> <cmd>cprev<CR>
-  inoremap jk <Esc>la
-  vnoremap y myy`y
-  nmap <leader>aa ggVG"*y
-  nmap <leader>ii ciw'<C-r>"'jj
-  vmap <leader>cc "*y
-  nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
-  nmap <Leader>cl ggVGc
-  nmap <Leader>cp ggVG"_c<Esc>"+p
-  nnoremap ff :FZF!<cr>
-  nnoremap <leader>nn :NERDTree<cr>
-  nnoremap <leader>rd :sort u<cr><esc>
-  nnoremap <leader>el :g/^$/d<cr>
-  nmap <leader>r :RangerWorkingDirectory<cr>
-  vnoremap J', ":m \'>+1<CR>gv=gv"
-  vnoremap K', ":m \'<-2<CR>gv=gv"
+"
+" ============================================================================
+" LEADER KEY SETUP
+" ============================================================================
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+let maplocalleader = " "
+
+" ============================================================================
+" BASIC KEYMAPS
+" ============================================================================
+
+" Escape alternatives
+inoremap kj <Esc>
+inoremap jk <Esc>la
+
+" Quick semicolon at end of line
+inoremap ;; <Esc>A;
+
+" ============================================================================
+" FILE OPERATIONS
+" ============================================================================
+
+" Save and quit
+nnoremap <Leader>s <Esc>:w!<CR>
+nnoremap <Leader>q <Esc>:q<CR>
+nnoremap <Leader>a <Esc>:qa<CR>
+nnoremap <Leader>z <Esc>:wq<CR>
+
+" ============================================================================
+" WINDOW MANAGEMENT
+" ============================================================================
+
+" Split windows
+nmap sd :vsplit<CR>
+nmap sx :split<CR>
+
+" Navigate between splits
+nmap sh <C-w>h
+nmap sj <C-w>j
+nmap sk <C-w>k
+nmap sl <C-w>l
+
+" Equalize split sizes
+nmap sq <C-w>=
+
+" ============================================================================
+" NAVIGATION
+" ============================================================================
+
+" Quick line movement
+nnoremap H ^
+nnoremap L $
+
+" Quickfix list navigation
+nnoremap <C-n> <cmd>cnext<CR>
+nnoremap <C-p> <cmd>cprev<CR>
+
+" ============================================================================
+" EDITING OPERATIONS
+" ============================================================================
+
+" Better yanking (keeps cursor position)
+vnoremap y myy`y
+
+" Move lines up and down in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" ============================================================================
+" TEXT MANIPULATION
+" ============================================================================
+
+" Select all and copy to system clipboard
+nmap <leader>aa ggVG"*y
+
+" Wrap word in single quotes and escape
+nmap <leader>ii ciw'<C-r>"'jj
+
+" Copy selection to system clipboard
+vmap <leader>cc "*y
+
+" Remove HTML tags and empty lines
+nmap <leader>ht :%s/<[^>]*>/\r/g<cr><esc><leader>elgg
+
+" Clear all lines
+nmap <Leader>cl ggVGc
+
+" Clear and paste from system clipboard
+nmap <Leader>cp ggVG"_c<Esc>"+p
+
+" Remove duplicate lines
+nnoremap <leader>rd :sort u<cr><esc>
+
+" Delete empty lines
+nnoremap <leader>el :g/^$/d<cr>
+
+" ============================================================================
+" PLUGIN KEYMAPS
+" ============================================================================
+
+" FZF fuzzy finder
+nnoremap ff :FZF!<cr>
+
+" NERDTree file explorer
+nnoremap <leader>nn :NERDTree<cr>
+
+" Ranger file manager
+nmap <leader>r :RangerWorkingDirectory<cr>
+
+" ============================================================================
+" SESSION MANAGEMENT
+" ============================================================================
+
+" Save and load sessions
+nnoremap <Leader>ms <Esc>:mksession! ~/nvim-session.vim<CR>
+nnoremap <Leader>ml <Esc>:source ~/nvim-session.vim<CR>
 " Autocommands 
   command! -nargs=1 Ngrep vimgrep "<args>" **
   au BufNewFile, BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
