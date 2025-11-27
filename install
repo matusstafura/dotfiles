@@ -36,6 +36,8 @@ ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 # vimrc
 rm $HOME/.vimrc
 ln -s $DOTFILES/vim/vimrc $HOME/.vimrc
+# root vimrc
+sudo ln -s $DOTFILES/vim/vimrc /root/.vimrc
 
 # p10k theme
 rm $HOME/.p10k.zsh
