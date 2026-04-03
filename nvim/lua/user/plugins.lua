@@ -129,18 +129,28 @@ use({
 })
 
 -- syntax highlighting
-use({
+use {
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate',
   requires = {
-    'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'JoosepAlviste/nvim-ts-context-commentstring',
   },
   config = function()
-    require('user.plugins.treesitter')
+    -- only run config after plugin is loaded
+    vim.schedule(function()
+      require('nvim-treesitter').setup {
+        ensure_installed = { "php", "go", "python" },
+        highlight = { enable = true, disable = { 'NvimTree' }, additional_vim_regex_highlighting = true },
+        textobjects = { select = { enable = true } },
+      }
+
+      pcall(function()
+        require('ts_context_commentstring').setup { enable = true }
+      end)
+    end)
   end,
-})
+}
 
 -- floating terminal
 use({
