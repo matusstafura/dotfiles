@@ -15,6 +15,14 @@ Includes configurations for:
 
 ## Installation
 
+### Packages first
+
+- Fedora
+
+```bash
+./install-packages.sh
+```
+
 ### Basic desktop setup
 ```bash
 git clone git@github.com:matusstafura/dotfiles.git

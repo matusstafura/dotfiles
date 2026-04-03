@@ -45,6 +45,7 @@ setopt HIST_IGNORE_SPACE
 # fzf 
 # -------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 bindkey -s ^f 'fzf\n'
 bindkey -s ^n "source ~/dotfiles/scripts/tmux-sessionizer\n"
 
