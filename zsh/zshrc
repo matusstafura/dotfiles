@@ -1,23 +1,25 @@
 # -------------------------------------
-# nvim
-# -------------------------------------
-export EDITOR=/usr/local/bin/nvim
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# -------------------------------------
-# nvm
-# -------------------------------------
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads nvm bash_completion
-
-# -------------------------------------
-# powerlevel10k
+# powerlevel10k (MUST BE FIRST)
 # -------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# -------------------------------------
+# nvim
+# -------------------------------------
+export EDITOR=/usr/local/bin/nvim
+
+# -------------------------------------
+# nvm
+# -------------------------------------
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# -------------------------------------
+# powerlevel10k config
+# -------------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -63,8 +65,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ctags=/usr/local/bin/ctags
 
