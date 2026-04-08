@@ -13,8 +13,8 @@ alias x="cd $HOME/Sites/temp/"
 alias cpp="g++ -std=c++17"
 
 alias yvid="yt-dlp -f best"
-alias yaud="yt-dlp --extract-audio -f best --audio-format m4a"
-alias ymp3="yt-dlp --extract-audio -f best --audio-format mp3"
+alias yaud="yt-dlp --extract-audio --audio-format m4a"
+alias ymp3="yt-dlp --extract-audio --audio-format mp3"
 
 # "C" composer
 alias cod="composer dump-autoload"
@@ -34,7 +34,6 @@ alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
 alias ren="find . -type f -exec mv {} {}.$1 \;"
 alias del="find . -type f -name '*.$1' -delete"
 alias own="find . -type f ! -name '*.$1' -delete"
-alias ela="~/elasticsearch/bin/elasticsearch"
 alias nrd="npm run dev"
 
 # Laravel
