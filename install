@@ -12,6 +12,18 @@ ln -s $DOTFILES/i3 $HOME/.config/i3
 rm -rf $HOME/.config/polybar
 ln -s $DOTFILES/polybar $HOME/.config/polybar
 
+# foot
+rm -rf $HOME/.config/foot
+ln -sf $DOTFILES/foot $HOME/.config/foot
+
+# hyprland
+rm -rf $HOME/.config/hypr
+ln -sf $DOTFILES/hypr $HOME/.config/hypr
+
+# waybar
+rm -rf $HOME/.config/waybar
+ln -sf $DOTFILES/waybar $HOME/.config/waybar
+
 # rofi
 rm -rf $HOME/.config/rofi
 ln -s $DOTFILES/rofi $HOME/.config/rofi
@@ -37,11 +49,12 @@ ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 rm $HOME/.vimrc
 ln -s $DOTFILES/vim/vimrc $HOME/.vimrc
 # root vimrc
-sudo ln -s $DOTFILES/vim/vimrc /root/.vimrc
+# sudo ln -s $DOTFILES/vim/vimrc /root/.vimrc
 
 # p10k theme
 rm $HOME/.p10k.zsh
 ln -s $DOTFILES/zsh/p10k.zsh $HOME/.p10k.zsh
 
 # git templates
-ln -sf ~/dotfiles/git-templates ~/.git-templates
+rm $HOME/.git-templates
+ln -sf ~/dotfiles/git-templates $HOME/.git-templates
