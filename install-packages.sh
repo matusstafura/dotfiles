@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-sudo dnf install zsh sway rofi polybar git -y
+sudo dnf install zsh sway rofi polybar git jetbrains-mono-fonts-all -y
 
 # omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
