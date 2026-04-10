@@ -40,6 +40,9 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 # tmux
 rm $HOME/.config/.tmux.conf
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/.tmux.conf
+rm -rf $HOME/.config/tmux
+mkdir -p $HOME/.config/tmux
+ln -s $DOTFILES/tmux/import_env.sh $HOME/.config/tmux/import_env.sh
 
 # zsh
 rm $HOME/.zshrc
