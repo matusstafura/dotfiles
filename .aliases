@@ -2,7 +2,7 @@
 alias d="cd $HOME/Downloads/"
 alias k="kubectl"
 alias m="minikube"
-alias o="cd $HOME/Obsidian/Legacy/"
+alias o="cd $HOME/Obsidian"
 alias p="python3"
 alias r="ranger"
 alias s="cd $HOME/Sites/"
