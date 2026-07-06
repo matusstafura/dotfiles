@@ -4,6 +4,7 @@ local target_os = wezterm.target_triple
 
 config.color_scheme = "Catppuccin Latte"
 config.font = wezterm.font('JetBrains Mono')
+config.window_close_confirmation = 'NeverPrompt'
 config.font_size = 14.0
 config.line_height = 1.3
 config.audible_bell = "Disabled"

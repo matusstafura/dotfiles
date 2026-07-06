@@ -92,14 +92,12 @@ vim.lsp.config("gopls", {
 })
 
 -- Diagnostics UI
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = false,
-    virtual_text = false,
-    underline = false,
-    update_in_insert = false,
-  }
-)
+vim.diagnostic.config({
+  signs = false,
+  virtual_text = false,
+  underline = false,
+  update_in_insert = false,
+})
 
 -- nvim-cmp setup
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
