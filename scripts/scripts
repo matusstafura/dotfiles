@@ -4,6 +4,9 @@ dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
 mkc() { mkdir "$1"; cd "$1"; }
 ide() { tmux split-window -v -p 20; }
 gfr() {
+  git init && git add . && git commit -m 'first init' && git config user.name matusstafura && git config user.email kobe21@gmail.com
+}
+gfrp() {
   local project_name=$(basename "$PWD")
   local year=$(date +%Y)
   
