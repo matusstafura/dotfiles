@@ -1,0 +1,32 @@
+# -------------------------------------
+# powerlevel10k (MUST BE FIRST)
+# -------------------------------------
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# -------------------------------------
+# editor
+# -------------------------------------
+export EDITOR=vim
+
+# -------------------------------------
+# powerlevel10k config
+# -------------------------------------
+ZSH_THEME="powerlevel10k/powerlevel10k"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# -------------------------------------
+# load custom dotfiles
+# -------------------------------------
+[ -f ~/dotfiles/.aliases ] && source ~/dotfiles/.aliases
+[ -f ~/dotfiles/scripts/aes ] && source ~/dotfiles/scripts/aes
+
+# -------------------------------------
+# zsh
+# -------------------------------------
+export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Don't save commands that start with a space
+setopt HIST_IGNORE_SPACE
