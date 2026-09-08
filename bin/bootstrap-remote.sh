@@ -31,7 +31,8 @@ else
 fi
 
 if [ -d "$DOTFILES_DIR/.git" ]; then
-  log "Using existing dotfiles checkout at $DOTFILES_DIR"
+  log "Updating existing dotfiles checkout at $DOTFILES_DIR"
+  git -C "$DOTFILES_DIR" pull --ff-only || echo "warning: git pull failed, continuing with existing checkout" >&2
 else
   log "Cloning dotfiles to $DOTFILES_DIR"
   git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_DIR"
