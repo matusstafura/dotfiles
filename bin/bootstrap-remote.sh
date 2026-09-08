@@ -78,7 +78,9 @@ curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 log "Installing vim plugins"
-vim -es -c "PlugInstall --sync" -c "qa" || true
+if ! vim -es -u "$HOME/.vimrc" -i NONE -c "PlugInstall --sync" -c "qa" </dev/null; then
+  echo "warning: vim-plug install failed; run ':PlugInstall' manually inside vim" >&2
+fi
 
 ZSH_BIN="$(command -v zsh)"
 if [ "${SHELL:-}" != "$ZSH_BIN" ]; then
