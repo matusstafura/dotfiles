@@ -74,24 +74,6 @@ use('jessarcher/vim-heritage')
 -- lua gui
 use('ray-x/guihua.lua')
 
--- completion
-use({
-    'hrsh7th/nvim-cmp',
-    requires = {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'onsails/lspkind-nvim',
-        'rafamadriz/friendly-snippets'
-    },
-    config = function()
-        -- require('user.plugins.cmp')
-    end,
-})
-
 -- easy buffer delete
 use({
     'famiu/bufdelete.nvim',
@@ -218,12 +200,6 @@ use({
         'neovim/nvim-lspconfig',       -- LSP client
         'nvim-lua/plenary.nvim',
         'nvimtools/none-ls.nvim',      -- optional for formatting
-        'hrsh7th/nvim-cmp',            -- autocompletion
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
-        'L3MON4D3/LuaSnip'
     },
 
     config = function()
@@ -318,14 +294,6 @@ end
 if packer_bootstrap then
   require('packer').sync()
 end
-
-vim.cmd([[
-    let g:ale_fixers = {'php': ['phpcbf'], 'html': ['html-beautify'], 'javascript': ['eslint']}
-    let g:ale_fix_on_save = 1
-    let g:ale_linters = {'php': ['phpstan'], 'html': ['htmlhint']}
-    let g:ale_lint_on_save = 1
-    " let g:ale_fix_on_save = 1
-]])
 
 vim.cmd([[
   augroup packer_user_config
