@@ -3,6 +3,9 @@ bak() { cp "$1" "$1.bak"; ls -la "$1" "$1.bak"; }
 dup() { cp -R "$1" "$1-copy"; ls -la "$1" "$1.copy"; }
 mkc() { mkdir "$1"; cd "$1"; }
 ide() { tmux split-window -v -p 20; }
+ren() { find . -type f -exec mv {} {}."$1" \; }
+del() { find . -type f -name "*.$1" -delete; }
+own() { find . -type f ! -name "*.$1" -delete; }
 gfr() {
   git init && git add . && git commit -m 'first init' && git config user.name matusstafura && git config user.email kobe21@gmail.com
 }

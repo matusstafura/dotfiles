@@ -30,7 +30,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [ -f ~/dotfiles/.mycnf ] && source ~/dotfiles/.mycnf
 [ -f ~/dotfiles/scripts/scripts ] && source ~/dotfiles/scripts/scripts
 [ -f ~/dotfiles/scripts/aes ] && source ~/dotfiles/scripts/aes
-[ -f ~/dotfiles/scripts/tmux-sessionizer ]
 
 # -------------------------------------
 # zsh
@@ -86,3 +85,6 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support
 
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/85/"
+
+# Turso
+export PATH="$PATH:/Users/matusstafura/.turso"

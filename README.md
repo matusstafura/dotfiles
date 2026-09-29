@@ -26,7 +26,7 @@ Includes configurations for:
 ### Basic desktop setup
 ```bash
 git clone git@github.com:matusstafura/dotfiles.git
-./install.sh
+./install
 ```
 
 For systemd services, enable them with:

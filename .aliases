@@ -1,7 +1,5 @@
 # apps and languages
 alias d="cd $HOME/Downloads/"
-alias k="kubectl"
-alias m="minikube"
 alias o="cd $HOME/Obsidian"
 alias p="python3"
 alias r="ranger"
@@ -9,8 +7,6 @@ alias s="cd $HOME/Sites/"
 alias t="tmux"
 alias v="nvim"
 alias x="cd $HOME/Sites/temp/"
-
-alias cpp="g++ -std=c++17"
 
 alias yvid="yt-dlp -f best"
 alias yaud="yt-dlp --extract-audio --audio-format m4a"
@@ -31,9 +27,6 @@ alias dot="cd $HOME/dotfiles"
 
 # other
 alias jpo="jpegoptim -s -m 95 *.{jpeg,jpg}"
-alias ren="find . -type f -exec mv {} {}.$1 \;"
-alias del="find . -type f -name '*.$1' -delete"
-alias own="find . -type f ! -name '*.$1' -delete"
 alias nrd="npm run dev"
 
 # Laravel
@@ -52,8 +45,6 @@ alias ixs="bin/magento indexer:reindex"
 alias bco="bin/magento setup:di:compile"
 alias bpl="bin/magento setup:static-content:deploy"
 alias upg="php -d memory_limit=12G bin/magento setup:upgrade"
-alias bdd="bin/magento deploy:mode:set developer"
-alias bdp="bin/magento deploy:mode:set production"
 alias dep="php -d memory_limit=12G bin/magento setup:static-content:deploy -f en_US sk_SK"
 
 # "G" git aliases
