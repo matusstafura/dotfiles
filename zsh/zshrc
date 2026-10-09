@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# keep PATH free of duplicates (re-sourcing with `drz` won't grow it)
+typeset -U path
+
 # -------------------------------------
 # nvim
 # -------------------------------------
@@ -14,8 +17,16 @@ export EDITOR=/usr/local/bin/nvim
 # nvm
 # -------------------------------------
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# lazy-load: put the newest installed node on PATH now, load nvm on first `nvm` call
+_nvm_node_bin=(${NVM_DIR}/versions/node/v*(N/On[1]))
+[ -n "$_nvm_node_bin" ] && export PATH="$_nvm_node_bin/bin:$PATH"
+unset _nvm_node_bin
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  nvm "$@"
+}
 
 # -------------------------------------
 # powerlevel10k config
@@ -43,7 +54,6 @@ setopt HIST_IGNORE_SPACE
 # -------------------------------------
 # fzf 
 # -------------------------------------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 bindkey -s ^f 'fzf\n'
 bindkey -s ^n "source ~/dotfiles/scripts/tmux-sessionizer\n"
@@ -55,36 +65,18 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 # export PATH="/usr/local/opt/php@8.1/bin:$PATH"
 # export PATH="/usr/local/opt/php@8.1/sbin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/usr/local/opt/python@3.11/bin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-ctags=/usr/local/bin/ctags
-
-# Herd 
-export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
-export HERD_PHP_81_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/81/"
-export HERD_PHP_82_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/82/"
-export HERD_PHP_83_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/matusstafura/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected PHP 8.5 configuration.
-export HERD_PHP_85_INI_SCAN_DIR="/Users/matusstafura/Library/Application Support/Herd/config/php/85/"
+# Herd
+export PATH="$HOME/Library/Application Support/Herd/bin/":$PATH
+for v in 81 82 83 84 85; do
+  export "HERD_PHP_${v}_INI_SCAN_DIR=$HOME/Library/Application Support/Herd/config/php/$v/"
+done
 
 # Turso
-export PATH="$PATH:/Users/matusstafura/.turso"
+export PATH="$PATH:$HOME/.turso"
