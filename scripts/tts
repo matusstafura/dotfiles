@@ -1,0 +1,48 @@
+# text to speech via edge-tts (Microsoft neural voices, free, needs internet)
+#
+# setup on a new machine (macOS):
+#   brew install pipx          # plain `pip install` is blocked by Homebrew Python
+#   pipx ensurepath            # then open a new terminal tab
+#   pipx install edge-tts
+#   afplay is built into macOS; on Linux replace it in _tts with mpv or ffplay -nodisp -autoexit
+#   zsh only: uses ${@[-1]} and ${(j: :)...}; sourced from zsh/zshrc
+#
+# usage: lnl [speed] [-f file | text...] out.mp3
+#   lnl "hello" 1.mp3              default pace (1.0)
+#   lnl 0.8 "hello" 1.mp3          80% pace
+#   lnl 0.8 -f text.txt out.mp3    read text from a file
+#   TTS_NOPLAY=1 lnl ...           save only, don't play afterwards
+#
+# find voices:  edge-tts --list-voices | grep nl-
+# commands: lnl nl, lde de, lch de-CH (Swiss accent, not dialect), lsv sv, ljp ja
+_tts() {
+  local voice=$1; shift
+  local speed=1.0 file=""
+
+  # a leading number is the speed, but only when text/file and output follow it
+  if [[ $1 =~ ^[0-9]+(\.[0-9]+)?$ && $# -ge 3 ]]; then
+    speed=$1; shift
+  fi
+  if [[ $1 == -f ]]; then
+    file=$2; shift 2
+  fi
+  if (( $# < 1 )); then
+    echo "usage: [speed] [-f file | text] out.mp3" >&2
+    return 1
+  fi
+
+  local out=${@[-1]}
+  local text="${(j: :)@[1,-2]}"
+  local rate=$(awk -v s="$speed" 'BEGIN { printf "%+.0f%%", (s - 1) * 100 }')
+  local source=(--text "$text")
+  [[ -n $file ]] && source=(--file "$file")
+
+  edge-tts --voice "$voice" --rate="$rate" "${source[@]}" --write-media "$out" \
+    && [[ -z $TTS_NOPLAY ]] && afplay "$out"
+}
+
+lnl() { _tts nl-NL-ColetteNeural "$@"; }
+lde() { _tts de-DE-KatjaNeural "$@"; }
+lch() { _tts de-CH-LeniNeural "$@"; }
+lsv() { _tts sv-SE-SofieNeural "$@"; }
+ljp() { _tts ja-JP-NanamiNeural "$@"; }
