@@ -1,101 +1,223 @@
-tap "adoptopenjdk/openjdk"
-tap "gromgit/fuse"
-tap "henkrehorst/php"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "homebrew/test-bot"
-tap "sambadevi/powerlevel9k"
-tap "shivammathur/php"
-tap "yt-dlp/taps"
-brew "six"
-brew "ansible"
-brew "apr-util"
-brew "autoconf"
-brew "libffi"
-brew "python@3.9"
-brew "cairo"
-brew "cmake"
-brew "gd"
-brew "icu4c"
-brew "php", link: false
-brew "composer"
-brew "ctags"
-brew "dnsmasq", restart_service: true
-brew "dos2unix"
-brew "exiftool"
-brew "fd"
-brew "p11-kit"
-brew "gnutls"
-brew "harfbuzz"
-brew "libass"
-brew "ffmpeg"
-brew "fzf"
-brew "gawk"
-brew "geoip"
-brew "gh"
-brew "git"
-brew "guile"
-brew "gnupg"
-brew "go"
-brew "gobject-introspection"
-brew "golang-migrate"
-brew "graphviz"
-brew "hey"
-brew "htop"
-brew "httpd", restart_service: true
-brew "httrack"
-brew "hugo"
-brew "libheif"
-brew "imagemagick"
-brew "jhead"
-brew "jpegoptim"
-brew "jq"
-brew "openjdk"
-brew "kafka", restart_service: true
-brew "llvm"
-brew "make"
-brew "mcrypt"
-brew "protobuf"
-brew "zlib"
-brew "mysql", restart_service: true
-brew "ncdu"
-brew "neovim"
-brew "nghttp2"
-brew "nginx", restart_service: true
-brew "node"
-brew "nvm"
-brew "php-cs-fixer"
-brew "portaudio"
-brew "postgresql@14", restart_service: true
-brew "pv"
-brew "pyenv"
-brew "python@3.10"
-brew "ranger"
-brew "ruby-build"
-brew "rbenv"
-brew "redis", restart_service: true
-brew "rename"
-brew "ruby"
-brew "s3cmd"
-brew "sqlc"
-brew "tcl-tk"
-brew "testdisk"
-brew "tmux"
+tap "hudochenkov/sshpass"
+tap "libsql/sqld"
+tap "mongodb/brew", trusted: true
+tap "mutagen-io/mutagen", trusted: true
+tap "symfony-cli/tap", trusted: true
+tap "tursodatabase/tap", trusted: { formulae: ["turso"] }
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: true
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Companion library to apr, the Apache Portable Runtime library
+brew "apr-util"
+# Automatic configure script builder
+brew "autoconf"
+# Text processing scripting language
+brew "awk"
+# Text-based UI library
+brew "ncurses"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Programmable completion for Bash 3.2
+brew "bash-completion"
+# Vector graphics library with cross-device output support
+brew "cairo"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Cross-platform make
+brew "cmake", link: false
+# Graphics library to dynamically manipulate images
+brew "gd"
+# General-purpose scripting language
+brew "php", link: false
+# Dependency Manager for PHP
+brew "composer"
+# Reimplementation of ctags(1)
+brew "ctags"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq", restart_service: :changed
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Work with ID3 metadata in .mp3 files
+brew "eye-d3"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Cross-platform library for audio I/O
+brew "portaudio"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU awk utility
+brew "gawk"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Database migrations CLI tool
+brew "golang-migrate"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Perceptual JPEG encoder
+brew "guetzli"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
+# Improved top (interactive process viewer)
+brew "htop"
+# Apache HTTP server
+brew "httpd"
+# Website copier/offline browser
+brew "httrack"
+# Configurable static site generator
+brew "hugo"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@76"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@77"
+# Command-line editor
+brew "id3v2"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# GNOME XML library
+brew "libxml2"
+# Extract Digicam setting info from EXIF JPEG headers
+brew "jhead"
+# Utility to optimize JPEG files
+brew "jpegoptim"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# C XSLT library for GNOME
+brew "libxslt"
+# Utility for directing compilation
+brew "make"
+# Drop-in replacement for MySQL
+brew "mariadb@11.4", restart_service: :changed, link: true
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
+# NCurses Disk Usage
+brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# HTTP/2 C Library
+brew "nghttp2"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
+# Manage multiple Node.js versions
+brew "nvm"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Tool to automatically fix PHP coding standards issues
+brew "php-cs-fixer"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Object-relational database system
+brew "postgresql@14", restart_service: :changed
+# Object-relational database system
+brew "postgresql@18", restart_service: :changed
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Monitor data's progress through a pipe
+brew "pv"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
+# File browser
+brew "ranger"
+# Install various Ruby versions and implementations
+brew "ruby-build"
+# Ruby version manager
+brew "rbenv"
+# Perl-powered file rename script with many helpful built-ins
+brew "rename"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Command-line tool for the Amazon S3 service
+brew "s3cmd"
+# Python 2 and 3 compatibility utilities
+brew "six"
+# Generate type safe Go from SQL
+brew "sqlc"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Tool Command Language
+brew "tcl-tk"
+# Powerful free data recovery utility
+brew "testdisk"
+# Terminal multiplexer
+brew "tmux"
+# Collection of Linux utilities
 brew "util-linux"
-brew "varnish"
+# Vi 'workalike' with many additional features
 brew "vim"
+# Pager/text based browser
+brew "w3m"
+# Internet file retriever
 brew "wget"
+# Command-line interface for WordPress
 brew "wp-cli"
+# JavaScript package manager
 brew "yarn"
-brew "youtube-dl"
-brew "yt-dlp"
+# General-purpose lossless data-compression library
+brew "zlib"
+# UNIX shell (command interpreter)
 brew "zsh"
-brew "shivammathur/php/php@7.4"
-cask "adoptopenjdk12"
+brew "hudochenkov/sshpass/sshpass", trusted: true
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community", trusted: true
+# Fast file synchronization and network forwarding for remote development
+brew "mutagen-io/mutagen/mutagen", trusted: true
+# Symfony CLI helps Symfony developers manage projects, from local code to remote infrastructure
+brew "symfony-cli/tap/symfony-cli", trusted: true
+# Android SDK component
+cask "android-platform-tools"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Terminal built on web technologies
 cask "hyper"
+# File system integration
 cask "macfuse"
-cask "phantomjs"
+# Archive manager for data compression and backups
 cask "rar"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+go "matusstafura/coolsnippets"
+go "golang.org/x/tools/gopls"
+go "golang.org/x/vuln/cmd/govulncheck"
+go "honnef.co/go/tools/cmd/staticcheck"
+npm "@achrinza/node-ipc"
+npm "@angular/cli"
+npm "@github/copilot"
+npm "@vue/cli-service-global"
+npm "@vue/cli"
+npm "eslint"
+npm "json-server"
+npm "postcss-cli"
